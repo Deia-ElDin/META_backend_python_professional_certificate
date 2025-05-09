@@ -1,6 +1,3 @@
- # This is a comment
-
-# Variables
 x = 5
 y = "Hello"
 

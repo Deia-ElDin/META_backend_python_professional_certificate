@@ -16,7 +16,7 @@ py_file_4 := python_typecasting.py
 all:
 	@make build
 	@make clean
-	@docker run -d --name $(CON_NAME) -v "$(shell pwd):/app/Module_1" $(IMG_NAME) tail -f /dev/null
+	@docker run -d --name $(CON_NAME) -v "$(PWD):/app/Module_1" $(IMG_NAME) tail -f /dev/null
 	@printf "$(COLOR_GREEN)Container $(CON_NAME) is running in detached mode$(COLOR_RESET)\n"
 	@make info
 
@@ -36,7 +36,7 @@ info:
 	@echo "  make run4 - Runs $(py_file_4)"
 	
 build:
-	@docker build --no-cache -t $(IMG_NAME) .
+	@docker build --quiet --no-cache -t $(IMG_NAME) .
 
 clean:
 	@docker rm -f $(CON_NAME) 2>/dev/null || true
