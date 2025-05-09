@@ -12,6 +12,8 @@ py_file_3 := pythn_string.py
 py_file_4 := python_typecasting.py
 py_file_5 := python_userinput.py
 
+py_test_1 := python_test1.py
+
 .PHONY: all info build clean run1 run2 run3 run4 run5 fclean re git
 
 all:
@@ -28,17 +30,19 @@ info:
 	@echo "  run3   - Run pythn_string.py"
 	@echo "  run4   - Run python_typecasting.py"
 	@echo "  run5   - Run python_userinput.py"
+	@echo "  run6   - Run python_test.py"
 	@echo "  clean  - Remove the container"
 	@echo "  fclean - Remove the container and image"
 	@echo "  re     - Remove everything and start fresh"
-	@echo "  git-c2-m1 - Commit changes with prefix"
+	@echo "  git - Commit changes with prefix"
 	@printf "$(COLOR_BLUE)Usage:$(COLOR_RESET)\n"
 	@echo "  make run1 - Runs $(py_file_1)"
 	@echo "  make run2 - Runs $(py_file_2)"
 	@echo "  make run3 - Runs $(py_file_3)"
 	@echo "  make run4 - Runs $(py_file_4)"
 	@echo "  make run5 - Runs $(py_file_5)"
-	@echo "  make git-c2-m1 MSG=\"your message\" - Commit with prefix"
+	@echo "  make run6 - Runs $(py_test_1)"
+	@echo "  make git MSG=\"your message\" - Commit with prefix"
 
 build:
 	@docker build --quiet --no-cache -t $(IMG_NAME) .
@@ -61,6 +65,9 @@ run4:
 run5:
 	@docker exec -it $(CON_NAME) python $(py_file_5)
 
+run6:
+	@docker exec -it $(CON_NAME) python $(py_test_1)
+
 fclean: clean
 	@docker rmi -f $(IMG_NAME) 2>/dev/null || true
 
@@ -73,4 +80,6 @@ git:
 	fi
 	@git add .
 	@git commit -m "2nd Course - Programming in Python - Module 1: $(MSG)"
-	@printf "$(COLOR_GREEN)Changes committed with message: 2nd Course - Programming in Python - Module 1: $(MSG)$(COLOR_RESET)\n" 
+	@printf "$(COLOR_GREEN)Changes committed with message: 2nd Course - Programming in Python - Module 1: $(MSG)$(COLOR_RESET)\n"
+	@git push
+	@printf "$(COLOR_GREEN)Changes pushed to remote repository$(COLOR_RESET)\n" 
