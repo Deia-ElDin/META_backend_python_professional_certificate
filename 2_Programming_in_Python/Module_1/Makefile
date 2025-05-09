@@ -17,9 +17,10 @@ py_file_7 := python_operators.py
 py_file_8 := python_controlflow.py
 py_file_9 := python_match.py
 py_file_10 := python_loop.py
+py_file_11 := python_nestedloops.py 
 
 .PHONY: all info build clean fclean re git \
-	run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 
+	run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11	
 
 all:
 	@make build
@@ -45,6 +46,7 @@ info:
 	@echo "  run8        - Run $(py_file_8)"
 	@echo "  run9        - Run $(py_file_9)"
 	@echo "  run10       - Run $(py_file_10)"
+	@echo "  run11       - Run $(py_file_11)"
 	@echo "  git         - Commit changes with prefix"
 	
 	@printf "$(COLOR_BLUE)$(NL)Usage:$(COLOR_RESET)$(NL)"
@@ -63,6 +65,7 @@ info:
 	@echo "  make run8   - Runs $(py_file_8)"
 	@echo "  make run9   - Runs $(py_file_9)"
 	@echo "  make run10  - Runs $(py_file_10)"
+	@echo "  make run11  - Runs $(py_file_11)"
 	@echo "  make git MSG=\"your message\" - Commit with prefix"
 
 build:
@@ -106,14 +109,16 @@ run6:
 	@docker exec -it $(CON_NAME) python $(py_file_6)
 
 run7:
-	@docker exec -it $(CON_NAME) python $(py_file_7)
+	@docker exec $(CON_NAME) python $(py_file_7)
 
 run8:
-	@docker exec -it $(CON_NAME) python $(py_file_8)
+	@docker exec $(CON_NAME) python $(py_file_8)
 
 run9:
-	@docker exec -it $(CON_NAME) python $(py_file_9)
+	@docker exec $(CON_NAME) python $(py_file_9)
 
 run10:
-	@docker exec -it $(CON_NAME) python $(py_file_10)
+	@docker exec $(CON_NAME) python $(py_file_10)
 
+run11:
+	@docker exec $(CON_NAME) python $(py_file_11)
