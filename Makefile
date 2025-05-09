@@ -9,9 +9,14 @@ COLOR_YELLOW   := \033[1;33m
 
 KEEP_IMAGE_REF := $(PYTHON_IMAGE)* $(NODE_IMAGE) $(NEXT_IMAGE)
 
-.PHONY: all fclean pull-imgs py-img node-img
+.PHONY: pull-imgs py-img node-img fclean
 
-all: pull-imgs
+all:
+	@printf "$(COLOR_YELLOW)Available rules:$(COLOR_RESET)\n"
+	@echo "  py-img    - Pull the Python image"
+	@echo "  node-img  - Pull the Node.js image"
+	@echo "  pull-imgs - Pull both Python and Node.js images"
+	@echo "  fclean    - Remove all containers, images, networks, and volumes (except built-in networks)"
 
 py-img:
 	@docker pull $(PYTHON_IMAGE)
@@ -27,6 +32,6 @@ fclean:
 	if [ "$$ans" != "y" ]; then printf "$(COLOR_GREEN)Aborted fclean.$(COLOR_RESET)\n"; exit 0; fi; \
 	docker stop $$(docker ps -aq); \
 	docker rm   $$(docker ps -aq); \
-	docker rmi  $$(docker images -q $(foreach img,$(KEEP_IMAGE_REF),-f "reference!=$(img)")); \
+	docker rmi  $$(docker images -q); \
 	docker network rm $$(docker network ls -q); \
 	docker volume rm  $$(docker volume ls -q)

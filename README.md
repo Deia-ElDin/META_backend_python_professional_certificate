@@ -8,7 +8,7 @@ Course Link: https://www.coursera.org/professional-certificates/meta-back-end-de
 - Beginner level (no prior experience required)
 - 9-course series
 - Duration: 3–6 months
-- 4.7 ★ (5,944 reviews)
+
 
 ## What You'll Learn
 
