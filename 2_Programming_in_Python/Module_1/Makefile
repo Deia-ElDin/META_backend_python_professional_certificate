@@ -1,11 +1,18 @@
-COLOR_YELLOW   := \033[1;33m
-COLOR_GREEN    := \033[1;32m
-COLOR_BLUE     := \033[1;34m
-COLOR_RESET    := \033[0m
-NL 			   := \n
+YELLOW   := \033[1;33m
+GREEN    := \033[1;32m
+BLUE     := \033[1;34m
+RED      := \033[1;31m
+RESET    := \033[0m
+NL       := \n
 
-IMG_NAME := 2nd_course_1st_module_img
-CON_NAME := 2nd_course_1st_module_con
+CON_NAME := course_2_programming_in_python_con
+
+GIT_MSG_ERR := "$(RED)Error: Please provide a commit message using MSG=\"your message\"$(RESET)"
+GIT_COMMIT_PREFIX := "2nd Course - Programming in Python - Module 1"
+GIT_COMMIT_MSG := "$(GREEN)Changes committed with message: $(GIT_COMMIT_PREFIX): $(MSG)$(RESET)"
+GIT_PUSH_MSG := "$(GREEN)Changes pushed to remote repository$(RESET)"
+
+CONTAINER_ERR := "$(RED)Error: Container $(CON_NAME) is not running. Run 'make all' in the project directory first.$(RESET)"
 
 py_file_1 := python_syntax.py
 py_file_2 := python_datatypes.py
@@ -19,23 +26,12 @@ py_file_9 := python_match.py
 py_file_10 := python_loop.py
 py_file_11 := python_nestedloops.py 
 
-.PHONY: all info build clean fclean re git \
-	run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11	
-
-all:
-	@make build
-	@make clean
-	@docker run -d --name $(CON_NAME) -v "$(PWD):/app/Module_1" $(IMG_NAME) tail -f /dev/null
-	@printf "$(COLOR_GREEN)$(NL)Container $(CON_NAME) is running in detached mode$(COLOR_RESET)$(NL)"
-	@make info
+.PHONY: all info git run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11	
 
 info:
-	@printf "$(COLOR_YELLOW)$(NL)Available rules:$(COLOR_RESET)$(NL)"
-	@echo "  all         - Build, clean and run the container"
+	@printf "$(YELLOW)$(NL)Available rules:$(RESET)$(NL)"
+	@echo "  all         - Display this information"
 	@echo "  info        - Display this information"
-	@echo "  clean       - Remove the container"
-	@echo "  fclean      - Remove the container and image"
-	@echo "  re          - Remove everything and start fresh"
 	@echo "  run1        - Run $(py_file_1)"
 	@echo "  run2        - Run $(py_file_2)"
 	@echo "  run3        - Run $(py_file_3)"
@@ -49,12 +45,7 @@ info:
 	@echo "  run11       - Run $(py_file_11)"
 	@echo "  git         - Commit changes with prefix"
 	
-	@printf "$(COLOR_BLUE)$(NL)Usage:$(COLOR_RESET)$(NL)"
-	@echo "  make all    - Build, clean and run the container"
-	@echo "  make info   - Display this information"
-	@echo "  make clean  - Remove the container"
-	@echo "  make fclean - Remove the container and image"
-	@echo "  make re     - Remove everything and start fresh"
+	@printf "$(BLUE)$(NL)Usage:$(RESET)$(NL)"
 	@echo "  make run1   - Runs $(py_file_1)"
 	@echo "  make run2   - Runs $(py_file_2)"
 	@echo "  make run3   - Runs $(py_file_3)"
@@ -68,59 +59,51 @@ info:
 	@echo "  make run11  - Runs $(py_file_11)"
 	@echo "  make git MSG=\"your message\" - Commit with prefix"
 
-build:
-	@docker build --quiet -t $(IMG_NAME) .
-
-clean:
-	@docker rm -f $(CON_NAME) 2>/dev/null || true
-
-fclean: clean
-	@docker rmi -f $(IMG_NAME) 2>/dev/null || true
-
-re: fclean all
+check_container:
+	@docker ps | grep $(CON_NAME) > /dev/null || (printf "$(CONTAINER_ERR)$(NL)"; exit 1)
 
 git:
 	@if [ -z "$(MSG)" ]; then \
-		printf "$(COLOR_RED)Error: Please provide a commit message using MSG=\"your message\"$(COLOR_RESET)$(NL)"; \
+		printf "$(GIT_MSG_ERR)$(NL)"; \
 		exit 1; \
 	fi
 	@git add .
-	@git commit -m "2nd Course - Programming in Python - Module 1: $(MSG)"
-	@printf "$(COLOR_GREEN)Changes committed with message: 2nd Course - Programming in Python - Module 1: $(MSG)$(COLOR_RESET)$(NL)"
+	@git commit -m "$(GIT_COMMIT_PREFIX): $(MSG)"
+	@printf "$(GIT_COMMIT_MSG)$(NL)"
 	@git push
-	@printf "$(COLOR_GREEN)Changes pushed to remote repository$(COLOR_RESET)$(NL)" 
+	@printf "$(GIT_PUSH_MSG)$(NL)" 
 
-run1:
-	@docker exec $(CON_NAME) python $(py_file_1)
+run1: check_container
+	@docker exec $(CON_NAME) python /app/Module_1/$(py_file_1)
 
-run2:
-	@docker exec $(CON_NAME) python $(py_file_2)
+run2: check_container
+	@docker exec $(CON_NAME) python /app/Module_1/$(py_file_2)
 
-run3:
-	@docker exec $(CON_NAME) python $(py_file_3)
+run3: check_container
+	@docker exec $(CON_NAME) python /app/Module_1/$(py_file_3)
 
-run4:
-	@docker exec $(CON_NAME) python $(py_file_4)
+run4: check_container
+	@docker exec $(CON_NAME) python /app/Module_1/$(py_file_4)
 
-run5:
-	@docker exec -it $(CON_NAME) python $(py_file_5)
+run5: check_container
+	@docker exec -it $(CON_NAME) python /app/Module_1/$(py_file_5)
 
-run6:
-	@docker exec -it $(CON_NAME) python $(py_file_6)
+run6: check_container
+	@docker exec -it $(CON_NAME) python /app/Module_1/$(py_file_6)
 
-run7:
-	@docker exec $(CON_NAME) python $(py_file_7)
+run7: check_container
+	@docker exec $(CON_NAME) python /app/Module_1/$(py_file_7)
 
-run8:
-	@docker exec $(CON_NAME) python $(py_file_8)
+run8: check_container
+	@docker exec $(CON_NAME) python /app/Module_1/$(py_file_8)
 
-run9:
-	@docker exec $(CON_NAME) python $(py_file_9)
+run9: check_container
+	@docker exec $(CON_NAME) python /app/Module_1/$(py_file_9)
 
-run10:
-	@docker exec $(CON_NAME) python $(py_file_10)
+run10: check_container
+	@docker exec $(CON_NAME) python /app/Module_1/$(py_file_10)
 
-run11:
-	@docker exec $(CON_NAME) python $(py_file_11)
+run11: check_container
+	@docker exec $(CON_NAME) python /app/Module_1/$(py_file_11)
 
 # Completed Module 1
