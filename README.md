@@ -29,7 +29,7 @@ Course Link: https://www.coursera.org/professional-certificates/meta-back-end-de
 
 ## Course Series
 
-1. Introduction to Back-End Development
+1. Introduction to Back-End Development 
 2. Programming in Python
 3. Version Control
 4. Introduction to Databases for Back-End Development

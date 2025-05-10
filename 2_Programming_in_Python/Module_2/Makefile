@@ -1,6 +1,6 @@
-include ../common.mk
+include ../../common.mk
 
-py_file_1 := puthon_functions.py
+py_file_1 := python_functions.py
 
 .PHONY: all info git run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11	
 

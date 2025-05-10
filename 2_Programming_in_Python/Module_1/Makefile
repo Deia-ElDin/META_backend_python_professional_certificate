@@ -1,4 +1,4 @@
-include ../common.mk
+include ../../common.mk
 
 py_file_1 := python_syntax.py
 py_file_2 := python_datatypes.py
