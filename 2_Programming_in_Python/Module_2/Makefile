@@ -1,7 +1,5 @@
 include ../common.mk
 
-GIT_COMMIT_PREFIX := "2nd Course - Programming in Python - Module 2"
-
 py_file_1 := puthon_functions.py
 
 .PHONY: all info git run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11	
@@ -26,7 +24,7 @@ git:
 		exit 1; \
 	fi
 	@git add .
-	@git commit -m '$(GIT_COMMIT_PREFIX): $(MSG)'
+	@git commit -m '2nd Course - Programming in Python - Module 2: $(MSG)'
 	@printf "$(GREEN)Module-level changes committed with message: 2nd Course - Programming in Python - Module 2: $(MSG)$(RESET)$(NL)"
 	@git push
 	@printf "$(YELLOW)Module-level changes pushed to remote repository$(RESET)$(NL)"

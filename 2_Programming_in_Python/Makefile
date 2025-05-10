@@ -1,7 +1,5 @@
 include common.mk
 
-GIT_COMMIT_PREFIX := "2nd Course - Programming in Python"
-
 .PHONY: all info build clean fclean re git
 
 all:
@@ -19,13 +17,14 @@ info:
 	@echo "  fclean      - Remove the container and image"
 	@echo "  re          - Remove everything and start fresh"
 	@echo "  git         - Commit course-level changes with prefix"
+
 	@printf "$(BLUE)$(NL)Usage:$(RESET)$(NL)"
 	@echo "  make all    - Build, clean and run the container"
 	@echo "  make info   - Display this information"
 	@echo "  make clean  - Remove the container"
 	@echo "  make fclean - Remove the container and image"
 	@echo "  make re     - Remove everything and start fresh"
-	@echo "  make git MSG=\"your message\" - Commit course-level changes with prefix"
+	@echo "  make git MSG=\"your message\" - Commit course-level changes with prefix$(NL)"
 
 build:
 	@docker build -t $(IMG_NAME) .
@@ -44,7 +43,7 @@ git:
 		exit 1; \
 	fi
 	@git add .
-	@git commit -m '$(GIT_COMMIT_PREFIX): $(MSG)'
-	@printf "$(GREEN)Course-level changes committed with message: $(GIT_COMMIT_PREFIX): $(MSG)$(RESET)$(NL)"
+	@git commit -m '2nd Course - Programming in Python: $(MSG)'
+	@printf "$(GREEN)Course-level changes committed with message: 2nd Course - Programming in Python: $(MSG)$(RESET)$(NL)"
 	@git push
 	@printf "$(YELLOW)Course-level changes pushed to remote repository$(RESET)$(NL)"

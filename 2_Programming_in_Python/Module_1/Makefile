@@ -1,7 +1,5 @@
 include ../common.mk
 
-GIT_COMMIT_PREFIX := "2nd Course - Programming in Python - Module 1"
-
 py_file_1 := python_syntax.py
 py_file_2 := python_datatypes.py
 py_file_3 := pythn_string.py
@@ -45,7 +43,7 @@ info:
 	@echo "  make run9   - Runs $(py_file_9)"
 	@echo "  make run10  - Runs $(py_file_10)"
 	@echo "  make run11  - Runs $(py_file_11)"
-	@echo "  make git MSG=\"your message\" - Commit with prefix"
+	@echo "  make git MSG=\"your message\" - Commit with prefix$(NL)"
 
 check_container:
 	@docker ps | grep $(CON_NAME) > /dev/null || (printf "$(RED)Error: Container $(CON_NAME) is not running. Run 'make all' in the project directory first.$(RESET)$(NL)"; exit 1)
@@ -56,10 +54,10 @@ git:
 		exit 1; \
 	fi
 	@git add .
-	@git commit -m '$(GIT_COMMIT_PREFIX): $(MSG)'
-	@printf "$(GREEN)Module-level changes committed with message: $(GIT_COMMIT_PREFIX): $(MSG)$(RESET)$(NL)"
+	@git commit -m '2nd Course - Programming in Python - Module 1: $(MSG)'
+	@printf "$(GREEN)Module-level changes committed with message: 2nd Course - Programming in Python - Module 1: $(MSG)$(RESET)$(NL)"
 	@git push
-	@printf "Module-level changes pushed to remote repository$(NL)"
+	@printf "$(YELLOW)Module-level changes pushed to remote repository$(RESET)$(NL)"
 
 run1: check_container
 	@docker exec $(CON_NAME) python /app/Module_1/$(py_file_1)
