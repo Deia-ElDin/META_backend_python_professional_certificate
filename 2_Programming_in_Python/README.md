@@ -1,4 +1,4 @@
-# Programming in Python (Meta Back-End Developer Professional Certificate)
+# Programming in Python 
 
 This directory contains all materials, code, and modules for the "Programming in Python" course, part of the Meta Back-End Developer Professional Certificate.
 
@@ -7,13 +7,25 @@ This course covers the fundamentals of Python programming, including syntax, dat
 
 ## Modules
 - **Module 1: Python Fundamentals**
-  - Basic Python syntax and data types
-  - String manipulation and type casting
+  - Python syntax and structure
+  - Data types (integers, floats, strings, booleans)
+  - String manipulation
+  - Type casting
   - User input handling
   - Operators and expressions
   - Control flow statements (if-else, match)
-  - Loops and nested loops
-- **Module 2:** Coming Soon
+  - Loops (for, while) and nested loops
+  - Practice and test scripts
+- **Module 2: Intermediate Python Concepts**
+  - Functions and scope
+  - Lists and list operations
+  - Tuples and tuple operations
+  - Sets and set operations
+  - Dictionaries and dictionary operations
+  - *args and **kwargs usage
+  - Error and exception handling
+  - File handling (reading, writing, appending files)
+  - Practical exercises and test scripts
 - **Module 3:** Coming Soon
 - **Module 4:** Coming Soon
 - **Module 5:** Coming Soon
