@@ -8,7 +8,8 @@ py_file_5 := 5-python_sets.py
 py_file_6 := 6-python_dictionaries.py
 py_file_7 := 7-python_args.py
 py_file_8 := 8-python_kwargs.py
-py_file_9 := 9-python_test.py
+py_file_9 := 9-python_test1.py
+py_file_10 := 10-python_error_exceptions.py
 
 .PHONY: all info git run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11	
 
@@ -27,6 +28,7 @@ info:
 	@echo "  run7        - Run $(py_file_7)"
 	@echo "  run8        - Run $(py_file_8)"
 	@echo "  run9        - Run $(py_file_9)"
+	@echo "  run10       - Run $(py_file_10)"
 	@echo "  git         - Commit changes with prefix"
 	
 	@printf "$(BLUE)$(NL)Usage:$(RESET)$(NL)"
@@ -39,6 +41,7 @@ info:
 	@echo "  make run7   - Runs $(py_file_7)"
 	@echo "  make run8   - Runs $(py_file_8)"
 	@echo "  make run9   - Runs $(py_file_9)"
+	@echo "  make run10   - Runs $(py_file_10)"
 	@echo "  make git MSG=\"your message\" - Commit with prefix$(NL)"
 
 git:
@@ -78,3 +81,6 @@ run8: check_container
 
 run9: check_container
 	@docker exec -it $(CON_NAME) python $(C2_M2)$(py_file_9)
+
+run10: check_container
+	@docker exec -it $(CON_NAME) python $(C2_M2)$(py_file_10)
