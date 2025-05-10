@@ -27,7 +27,7 @@ git:
 	fi
 	@git add .
 	@git commit -m '$(GIT_COMMIT_PREFIX): $(MSG)'
-	@printf "$(GREEN)Module-level changes committed with message: $(GIT_COMMIT_PREFIX): $(MSG)$(RESET)$(NL)"
+	@printf "$(GREEN)Module-level changes committed with message: 2nd Course - Programming in Python - Module 2: $(MSG)$(RESET)$(NL)"
 	@git push
 	@printf "$(YELLOW)Module-level changes pushed to remote repository$(RESET)$(NL)"
 
