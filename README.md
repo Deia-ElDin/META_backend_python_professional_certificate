@@ -16,6 +16,28 @@ This repository contains all coursework, code, and resources for the Meta Back-E
 ## Certificate Structure
 Each course in the certificate has its own directory. Each course directory may contain multiple modules, each with its own Makefile for running code and managing module-level commits.
 
+## Courses Included
+1. **Introduction to Back-End Development** (19 hours)
+    - **Certificate:** [View Certificate](https://www.coursera.org/account/accomplishments/verify/ZT4D2TTU785H)
+    - **Completed on:** May 7, 2025
+    - **Grade:** 96.40%
+    - **What You'll Learn:**
+        - Distinguish between front-end, back-end, and full-stack developers
+        - The benefits of working with UI frameworks
+        - Create and style a webpage with HTML and CSS
+2. **Programming in Python** (45 hours)
+    - **Status:** In Progress
+3. **Version Control** (18 hours)
+4. **Introduction to Databases for Back-End Development** (27 hours)
+5. **Django Web Framework** (45 hours)
+6. **APIs** (21 hours)
+7. **The Full Stack** (25 hours)
+8. **Back-End Developer Capstone** (20 hours)
+9. **Coding Interview Preparation** (12 hours)
+
+    
+
+
 ### Example Structure
 ```
 Meta_Back-End_Developer_Professional_Certificate/
