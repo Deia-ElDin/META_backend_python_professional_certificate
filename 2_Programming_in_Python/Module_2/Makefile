@@ -5,7 +5,7 @@ py_file_2 := 2-python_scope.py
 py_file_3 := 3-python_list.py
 py_file_4 := 4-python_tuple.py
 py_file_5 := 5-python_sets.py
-
+py_file_6 := 6-python_dictionaries.py
 .PHONY: all info git run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11	
 
 .DEFAULT_GOAL := info
@@ -19,6 +19,7 @@ info:
 	@echo "  run3        - Run $(py_file_3)"
 	@echo "  run4        - Run $(py_file_4)"
 	@echo "  run5        - Run $(py_file_5)"
+	@echo "  run6        - Run $(py_file_6)"
 	@echo "  git         - Commit changes with prefix"
 	
 	@printf "$(BLUE)$(NL)Usage:$(RESET)$(NL)"
@@ -27,6 +28,7 @@ info:
 	@echo "  make run3   - Runs $(py_file_3)"
 	@echo "  make run4   - Runs $(py_file_4)"
 	@echo "  make run5   - Runs $(py_file_5)"
+	@echo "  make run6   - Runs $(py_file_6)"
 	@echo "  make git MSG=\"your message\" - Commit with prefix$(NL)"
 
 git:
@@ -54,3 +56,6 @@ run4: check_container
 
 run5: check_container
 	@docker exec $(CON_NAME) python $(C2_M2)$(py_file_5)
+
+run6: check_container
+	@docker exec $(CON_NAME) python $(C2_M2)$(py_file_6)
