@@ -1,4 +1,4 @@
-from utils import print_separator
+from utils import print_file_header, print_separator
 
 print_file_header("1-python_functions.py")
 
