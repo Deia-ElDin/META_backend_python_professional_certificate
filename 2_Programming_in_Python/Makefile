@@ -1,41 +1,15 @@
 include ../common.mk
 
-.PHONY: all info build clean fclean re git
+.PHONY: info git
 
-all:
-	@make build
-	@make clean
-	@docker run -d --name $(CON_NAME) -v "$(PWD):/app" $(IMG_NAME) tail -f /dev/null
-	@printf "$(GREEN)$(NL)Container $(CON_NAME) is running in detached mode$(RESET)$(NL)"
-	@make info
+.DEFAULT_GOAL := info
 
 info:
-	@printf "$(YELLOW)$(NL)Available rules:$(RESET)$(NL)"
-	@echo "  all         - Build the container for the whole course, clean it if it exists and run the container"
-	@echo "  info        - Display this information"
-	@echo "  clean       - Remove the container"
-	@echo "  fclean      - Remove the container and image"
-	@echo "  re          - Remove everything and start fresh"
-	@echo "  git         - Commit course-level changes with prefix"
+	@printf "$(YELLOW)$(NL)Course-level Makefile:$(RESET)$(NL)"
+	@echo "  git   - Commit course-level changes with a message"
 
 	@printf "$(BLUE)$(NL)Usage:$(RESET)$(NL)"
-	@echo "  make all    - Build, clean and run the container"
-	@echo "  make info   - Display this information"
-	@echo "  make clean  - Remove the container"
-	@echo "  make fclean - Remove the container and image"
-	@echo "  make re     - Remove everything and start fresh"
-	@echo "  make git MSG=\"your message\" - Commit course-level changes with prefix$(NL)"
-
-build:
-	@docker build -t $(IMG_NAME) .
-
-clean:
-	@docker rm -f $(CON_NAME) 2>/dev/null || true
-
-fclean: clean
-	@docker rmi -f $(IMG_NAME) 2>/dev/null || true
-
-re: fclean all
+	@echo "  make git MSG=\"your message\"$(NL)"
 
 git:
 	@if [ -z "$(MSG)" ]; then \
