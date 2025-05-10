@@ -7,12 +7,7 @@ NL       := \n
 
 CON_NAME := course_2_programming_in_python_con
 
-GIT_MSG_ERR := "$(RED)Error: Please provide a commit message using MSG=\"your message\"$(RESET)"
 GIT_COMMIT_PREFIX := "2nd Course - Programming in Python - Module 1"
-GIT_COMMIT_MSG := "$(GREEN)Changes committed with message: $(GIT_COMMIT_PREFIX): $(MSG)$(RESET)"
-GIT_PUSH_MSG := "$(GREEN)Changes pushed to remote repository$(RESET)"
-
-CONTAINER_ERR := "$(RED)Error: Container $(CON_NAME) is not running. Run 'make all' in the project directory first.$(RESET)"
 
 py_file_1 := python_syntax.py
 py_file_2 := python_datatypes.py
@@ -60,18 +55,18 @@ info:
 	@echo "  make git MSG=\"your message\" - Commit with prefix"
 
 check_container:
-	@docker ps | grep $(CON_NAME) > /dev/null || (printf "$(CONTAINER_ERR)$(NL)"; exit 1)
+	@docker ps | grep $(CON_NAME) > /dev/null || (printf "$(RED)Error: Container $(CON_NAME) is not running. Run 'make all' in the project directory first.$(RESET)$(NL)"; exit 1)
 
 git:
 	@if [ -z "$(MSG)" ]; then \
-		printf "$(GIT_MSG_ERR)$(NL)"; \
+		printf "$(RED)Error: Please provide a commit message using MSG=\"your message\"$(RESET)$(NL)"; \
 		exit 1; \
 	fi
 	@git add .
-	@git commit -m "$(GIT_COMMIT_PREFIX): $(MSG)"
-	@printf "$(GIT_COMMIT_MSG)$(NL)"
+	@git commit -m '$(GIT_COMMIT_PREFIX): $(MSG)'
+	@printf "$(GREEN)Module-level changes committed with message: $(GIT_COMMIT_PREFIX): $(MSG)$(RESET)$(NL)"
 	@git push
-	@printf "$(GIT_PUSH_MSG)$(NL)" 
+	@printf "$(GREEN)Module-level changes pushed to remote repository$(RESET)$(NL)"
 
 run1: check_container
 	@docker exec $(CON_NAME) python /app/Module_1/$(py_file_1)
