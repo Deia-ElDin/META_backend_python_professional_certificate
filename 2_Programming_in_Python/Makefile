@@ -1,4 +1,3 @@
-# Color definitions
 YELLOW   := \033[1;33m
 GREEN    := \033[1;32m
 BLUE     := \033[1;34m
@@ -6,15 +5,10 @@ RED      := \033[1;31m
 RESET    := \033[0m
 NL       := \n
 
-# Docker configuration
 IMG_NAME := course_2_programming_in_python_img
 CON_NAME := course_2_programming_in_python_con
 
-# Git messages
-GIT_MSG_ERR := "$(RED)Error: Please provide a commit message using MSG=\"your message\"$(RESET)"
 GIT_COMMIT_PREFIX := "2nd Course - Programming in Python"
-GIT_COMMIT_MSG := "$(GREEN)Course-level changes committed with message: $(GIT_COMMIT_PREFIX): $(MSG)$(RESET)"
-GIT_PUSH_MSG := "$(GREEN)Course-level changes pushed to remote repository$(RESET)"
 
 .PHONY: all info build clean fclean re git
 
@@ -54,11 +48,11 @@ re: fclean all
 
 git:
 	@if [ -z "$(MSG)" ]; then \
-		printf "%b%b" "$(GIT_MSG_ERR)" "$(NL)"; \
+		printf "%bError: Please provide a commit message using MSG=\"your message\"%b%b" "$(RED)" "$(RESET)" "$(NL)"; \
 		exit 1; \
 	fi
 	@git add .
 	@git commit -m '$(GIT_COMMIT_PREFIX): $(MSG)'
-	@printf "%b%b" "$(GIT_COMMIT_MSG)" "$(NL)"
+	@printf "%bCourse-level changes committed with message: $(GIT_COMMIT_PREFIX): $(MSG)%b%b" "$(GREEN)" "$(RESET)" "$(NL)"
 	@git push
-	@printf "%b%b" "$(GIT_PUSH_MSG)" "$(NL)"
+	@printf "%bCourse-level changes pushed to remote repository%b%b" "$(GREEN)" "$(RESET)" "$(NL)"
