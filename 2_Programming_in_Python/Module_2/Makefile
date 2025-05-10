@@ -1,7 +1,7 @@
 include ../../common.mk
 
 py_file_1 := 1-python_functions.py
-py_file_2 := 2-python_functions.py
+py_file_2 := 2-python_scope.py
 
 .PHONY: all info git run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11	
 
@@ -20,9 +20,6 @@ info:
 	@echo "  make run2   - Runs $(py_file_2)"
 	@echo "  make git MSG=\"your message\" - Commit with prefix$(NL)"
 
-check_container:
-	@docker ps | grep $(CON_NAME) > /dev/null || (printf "$(RED)Error: Container $(CON_NAME) is not running. Run 'make all' in the project directory first.$(RESET)$(NL)"; exit 1)
-
 git:
 	@if [ -z "$(MSG)" ]; then \
 		printf "$(RED)Error: Please provide a commit message using MSG=\"your message\"$(RESET)$(NL)"; \
@@ -35,7 +32,7 @@ git:
 	@printf "$(YELLOW)Module-level changes pushed to remote repository$(RESET)$(NL)"
 
 run1: check_container
-	@docker exec $(CON_NAME) python /app/Module_2/$(py_file_1)
+	@docker exec $(CON_NAME) python $(C2_M2)$(py_file_1)
 
 run2: check_container
-	@docker exec $(CON_NAME) python /app/Module_2/$(py_file_2)
+	@docker exec $(CON_NAME) python $(C2_M2)$(py_file_2)
