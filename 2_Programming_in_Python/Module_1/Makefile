@@ -66,7 +66,7 @@ git:
 	@git commit -m '$(GIT_COMMIT_PREFIX): $(MSG)'
 	@printf "$(GREEN)Module-level changes committed with message: $(GIT_COMMIT_PREFIX): $(MSG)$(RESET)$(NL)"
 	@git push
-	@printf "$(GREEN)Module-level changes pushed to remote repository$(RESET)$(NL)"
+	@printf "Module-level changes pushed to remote repository$(NL)"
 
 run1: check_container
 	@docker exec $(CON_NAME) python /app/Module_1/$(py_file_1)

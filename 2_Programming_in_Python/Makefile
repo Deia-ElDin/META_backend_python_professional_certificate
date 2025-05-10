@@ -58,4 +58,4 @@ git:
 	@git commit -m '$(GIT_COMMIT_PREFIX): $(MSG)'
 	@printf "$(GREEN)Course-level changes committed with message: $(GIT_COMMIT_PREFIX): $(MSG)$(RESET)$(NL)"
 	@git push
-	@printf "$(GREEN)Course-level changes pushed to remote repository$(RESET)$(NL)"
+	@printf "Course-level changes pushed to remote repository$(NL)"
