@@ -13,7 +13,7 @@ py_file_10 := 10-python_error_exceptions.py
 py_file_11 := 11-python_file_handling.py
 py_file_12 := 12-python_test2.py
 
-.PHONY: all info git run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11	
+.PHONY: all info git run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11 run12
 
 .DEFAULT_GOAL := info
 
