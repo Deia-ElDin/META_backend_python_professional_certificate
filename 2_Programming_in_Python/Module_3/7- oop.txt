@@ -1,0 +1,45 @@
+OOP key concepts:
+    - Class
+    - Object
+    - Methods
+
+    - Class:
+        - Blueprint for creating objects
+        - Contains attributes and methods/behaviors
+        - Can have multiple objects
+
+    - Object:
+        - Instance of a class
+        - Has attributes and methods
+
+    - Methods:
+        - Functions defined within a class
+        - Can modify object attributes
+        - Can perform actions on objects
+
+    - Inheritance:
+        - Allows a class to inherit attributes and methods from another class
+        - Can have multiple subclasses
+        - Can have multiple superclasses
+
+    - Polymorphism:
+        - The ability of a function to change it's behavior when called by different objects
+        - Can have multiple subclasses
+        - Can have multiple superclasses
+
+    - Encapsulation:
+        - Restricts access to certain attributes and methods
+        - Can have multiple subclasses
+        - Can have multiple superclasses
+
+    - Abstraction:
+        - Hides the implementation details of a class for data secuity 
+        - Can have multiple subclasses
+        - Can have multiple superclasses
+
+
+Other OOP Concepts:
+    - Method overloading
+    - Method overriding
+    - Constructors
+    ...and more
