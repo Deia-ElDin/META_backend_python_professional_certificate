@@ -13,6 +13,11 @@ CON_NAME := meta_professional_certificate_con
 # Course 2 - Programming in Python path
 C2_M1 := 2_Programming_in_Python/Module_1/
 C2_M2 := 2_Programming_in_Python/Module_2/
+C2_M3 := 2_Programming_in_Python/Module_3/
+C2_M4 := 2_Programming_in_Python/Module_4/
+C2_M5 := 2_Programming_in_Python/Module_5/
+
+
 
 check_container:
 	@docker ps | grep $(CON_NAME) > /dev/null || (printf "$(RED)Error: Container $(CON_NAME) is not running. Run 'make all' in the project directory first.$(RESET)$(NL)"; exit 1)
