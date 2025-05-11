@@ -32,7 +32,7 @@ print ("List comprehension: \n")
 data = [2,3,5,7,11,13,17,19,23,29,31]
 # Ex1: List comprehension: updating the same list
 data = [x+3 for x in data]
-print("Updating the list: ", data)
+print("Updating the list: ", data)  
 
 # Ex2: List comprehension: creating a different list with updated values
 new_data = [x*2 for x in data]
@@ -49,10 +49,10 @@ print("Divisible by four minus one: ", fourxsub)
 # Ex5: Using range function:
 nines = [x for x in range(100) if x%9 == 0]
 print("Nines: ", nines)
-
+    
 print_separator()
 
-'''
+''' 
     Dictionary comprehension
 
         dict = { key:value for key, value in <sequence> if <condition> } 
