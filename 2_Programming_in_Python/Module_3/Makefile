@@ -6,7 +6,7 @@ py_file_3 := 3-string_reversal.py
 py_file_4 := 4-python_map_filter.py
 py_file_5 := 5-python_comprehension.py
 py_file_6 := 6-python_test1.py	
-py_file_7 := 7-python_oop.py
+py_file_7 := 7-python_class.py
 
 .PHONY: all info git run1 run2 run3 run4 run5 run6 run7
 
