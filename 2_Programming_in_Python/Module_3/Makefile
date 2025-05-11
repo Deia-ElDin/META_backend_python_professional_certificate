@@ -1,8 +1,9 @@
 include ../../common.mk
 
 py_file_1 := 1-python_algorithm.py
+py_file_2 := 2-python_pure_vs_traditional_functions.py
 
-.PHONY: all info git run1 
+.PHONY: all info git run1 run2
 
 .DEFAULT_GOAL := info
 
@@ -11,10 +12,12 @@ info:
 	@echo "  all         - Display this information"
 	@echo "  info        - Display this information"
 	@echo "  run1        - Run $(py_file_1)"
+	@echo "  run2        - Run $(py_file_2)"
 	@echo "  git         - Commit changes with prefix"
 	
 	@printf "$(BLUE)$(NL)Usage:$(RESET)$(NL)"
 	@echo "  make run1   - Runs $(py_file_1)"
+	@echo "  make run2   - Runs $(py_file_2)"
 	@echo "  make git MSG=\"your message\" - Commit with prefix$(NL)"
 
 git:
@@ -30,4 +33,7 @@ git:
 
 run1: check_container
 	@docker exec $(CON_NAME) python $(C2_M3)$(py_file_1)
+
+run2: check_container
+	@docker exec $(CON_NAME) python $(C2_M3)$(py_file_2)
 

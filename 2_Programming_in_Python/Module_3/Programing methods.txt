@@ -1,0 +1,117 @@
+Programming Paradigms:
+
+1. Procedural Programming
+   - Focuses on procedures/functions that operate on data
+   - Data and functions are separate
+   - Example:
+     def calculate_area(length, width):
+         return length * width
+     def calculate_perimeter(length, width):
+         return 2 * (length + width)
+     # Data is passed to functions
+     area = calculate_area(5, 3)
+     perimeter = calculate_perimeter(5, 3)
+
+2. Functional Programming
+   - It has 2 types:
+        1- Traditional Functional:
+           - Can have side effects
+           - May modify external state
+           - Can depend on external variables
+           - Example:
+             total = 0
+             def add_to_total(x):
+                 global total
+                 total += x
+                 return total
+             # Has side effect: modifies external 'total' variable
+
+        2- Pure Function:
+           - No side effects
+           - Same input always gives same output
+           - Doesn't depend on external state
+           - Doesn't modify external state
+           - Example:
+             def add(a, b):
+                 return a + b
+             # Always returns same result for same inputs
+             # No side effects, no external dependencies
+
+   - Treats computation as evaluation of mathematical functions
+   - Avoids changing state and mutable data
+   - Functions are first-class citizens
+   - Example:
+     numbers = [1, 2, 3, 4, 5]
+     # Pure function: same input always gives same output
+     squared = list(map(lambda x: x**2, numbers))
+     # No side effects, original data unchanged
+
+3. Object-Oriented Programming (OOP)
+   - Organizes code into objects that contain data and code
+   - Objects are instances of classes
+   - Encapsulates data and methods together
+   - Example:
+     class Rectangle:
+         def __init__(self, length, width):
+             self.length = length
+             self.width = width
+         
+         def calculate_area(self):
+             return self.length * self.width
+         
+         def calculate_perimeter(self):
+             return 2 * (self.length + self.width)
+     # Create object and use its methods
+     rect = Rectangle(5, 3)
+     area = rect.calculate_area()
+     perimeter = rect.calculate_perimeter()
+
+Key Differences:
+    - Procedural: Focus on procedures/functions
+    - Functional: Focus on pure functions and immutability
+    - OOP: Focus on objects and their interactions
+
+    1. Data and Function Relationship:
+        - Procedural: Data and functions are separate entities
+        - Functional: Data is immutable, functions transform data
+        - OOP: Data and functions are bundled together in objects
+
+    2. State Management:
+        - Procedural: State can be modified anywhere in the program
+        - Functional: State is immutable, changes create new data
+        - OOP: State is encapsulated within objects
+
+    3. Code Organization:
+        - Procedural: Organized around procedures/functions
+        - Functional: Organized around data transformations
+        - OOP: Organized around objects and their relationships
+
+    4. Reusability:
+        - Procedural: Functions can be reused
+        - Functional: Functions are highly reusable and composable
+        - OOP: Objects and classes can be reused through inheritance
+
+    5. Main Focus:
+        - Procedural: "How to do it" (step-by-step instructions)
+        - Functional: "What to do" (declarative approach)
+        - OOP: "What is it" (modeling real-world objects)
+
+    6. Example Comparison:
+        - Procedural:
+            def calculate_area(length, width):
+                return length * width
+            area = calculate_area(5, 3)
+
+        - Functional:
+            area = lambda l, w: l * w
+            result = area(5, 3)
+
+        - OOP:
+            class Rectangle:
+                def __init__(self, l, w):
+                    self.length = l
+                    self.width = w
+                def area(self):
+                    return self.length * self.width
+            rect = Rectangle(5, 3)
+            result = rect.area()
