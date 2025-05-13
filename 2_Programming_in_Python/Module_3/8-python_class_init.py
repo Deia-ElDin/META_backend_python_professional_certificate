@@ -31,3 +31,19 @@ print (pasta.items)
 
 print (pizza.contents())
 print (pasta.contents())
+
+print_separator()
+
+class MyFirstClass():
+    # print("Who wrote this?")
+    index = "Author-Book"
+
+    def __init__(self):
+        print("Who wrote this?")  # Move the print statement into the constructor
+
+    def hand_list(self, philosopher, book):
+        print(self.index)
+        print(philosopher + " wrote the book: " + book) 
+
+my_first_class = MyFirstClass()
+my_first_class.hand_list("Plato", "Republic")
