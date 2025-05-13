@@ -30,15 +30,3 @@ juno = Chefs("Juno", "J")
 print(emily.leave_request(3))
 print(adrian.password)
 print(emily.name)
-
-class A:
-   def __init__(self, c):
-       print("---------Inside class A----------")
-       self.c = c
-   print("Print inside A.")
-
-   def alpha(self):
-       c = self.c + 1
-       return c
-
-print(dir(A))
