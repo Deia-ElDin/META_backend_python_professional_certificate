@@ -1,15 +1,16 @@
 include ../../common.mk
 
-py_file_1 := 1-python_algorithm.py
-py_file_2 := 2-python_pure_vs_traditional_functions.py
-py_file_3 := 3-string_reversal.py
-py_file_4 := 4-python_map_filter.py
-py_file_5 := 5-python_comprehension.py
-py_file_6 := 6-python_test1.py	
-py_file_7 := 7-python_class_basic.py
-py_file_8 := 8-python_class_init.py
-py_file_9 := 9-python_class_practice_payment_info.py
-py_file_10 := 10-pyahton_class_inheritance.py
+py_file_1  := 1-python_algorithm.py
+py_file_2  := 2-python_pure_vs_traditional_functions.py
+py_file_3  := 3-string_reversal.py
+py_file_4  := 4-python_map_filter.py
+py_file_5  := 5-python_comprehension.py
+py_file_6  := 6-python_test1.py	
+py_file_7  := 7-python_class_basic.py
+py_file_8  := 8-python_class_init.py
+py_file_9  := 9-python_class_practice_payment_info.py
+py_file_10 := 10-python_class_inheritance.py
+py_file_11 := 11-python_class_abstract.py
 
 .PHONY: all info git run1 run2 run3 run4 run5 run6 run7 run8
 
@@ -29,6 +30,7 @@ info:
 	@echo "  run8        - Run $(py_file_8)"
 	@echo "  run9        - Run $(py_file_9)"
 	@echo "  run10        - Run $(py_file_10)"
+	@echo "  run11        - Run $(py_file_11)"
 	@echo "  git         - Commit changes with prefix"
 	
 	@printf "$(BLUE)$(NL)Usage:$(RESET)$(NL)"
@@ -42,6 +44,7 @@ info:
 	@echo "  make run8   - Runs $(py_file_8)"
 	@echo "  make run9   - Runs $(py_file_9)"
 	@echo "  make run10   - Runs $(py_file_10)"
+	@echo "  make run11   - Runs $(py_file_11)"
 	@echo "  make git MSG=\"your message\" - Commit with prefix$(NL)"
 
 git:
@@ -83,4 +86,7 @@ run9: check_container
 	@docker exec $(CON_NAME) python $(C2_M3)$(py_file_9)
 
 run10: check_container
-	@docker exec $(CON_NAME) python $(C2_M3)$(py_file_10)
+	@docker exec $(CON_NAME) python $(C2_M3)$(py_file_10)	
+
+run11: check_container
+	@docker exec -it $(CON_NAME) python $(C2_M3)$(py_file_11)
