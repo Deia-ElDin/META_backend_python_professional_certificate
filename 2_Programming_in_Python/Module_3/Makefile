@@ -12,8 +12,9 @@ py_file_9  := 9-python_class_practice_payment_info.py
 py_file_10 := 10-python_class_inheritance.py
 py_file_11 := 11-python_class_abstract.py
 py_file_12 := 12-python_test2.py
+py_file_13 := 13-python_mro.py
 
-.PHONY: all info git run1 run2 run3 run4 run5 run6 run7 run8
+.PHONY: all info git run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11 run12 run13
 
 .DEFAULT_GOAL := info
 
@@ -32,7 +33,8 @@ info:
 	@echo "  run9        - Run $(py_file_9)"
 	@echo "  run10       - Run $(py_file_10)"
 	@echo "  run11       - Run $(py_file_11)"
-	@echo "  run12       - Run $(py_file_12)"
+	@echo "  run12       - Run $(py_file_12)"	
+	@echo "  run13       - Run $(py_file_13)"
 	@echo "  git         - Commit changes with prefix"
 	
 	@printf "$(BLUE)$(NL)Usage:$(RESET)$(NL)"
@@ -48,6 +50,7 @@ info:
 	@echo "  make run10  - Runs $(py_file_10)"
 	@echo "  make run11  - Runs $(py_file_11)"
 	@echo "  make run12  - Runs $(py_file_12)"
+	@echo "  make run13  - Runs $(py_file_13)"
 	@echo "  make git MSG=\"your message\" - Commit with prefix$(NL)"
 
 git:
@@ -95,4 +98,7 @@ run11: check_container
 	@docker exec -it $(CON_NAME) python $(C2_M3)$(py_file_11)
 
 run12: check_container
-	@docker exec $(CON_NAME) python $(C2_M3)$(py_file_12)
+	@docker exec $(CON_NAME) python $(C2_M3)$(py_file_12) 
+
+run13: check_container
+	@docker exec $(CON_NAME) python $(C2_M3)$(py_file_13)
