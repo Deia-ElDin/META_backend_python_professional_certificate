@@ -26,7 +26,20 @@ This course covers the fundamentals of Python programming, including syntax, dat
   - Error and exception handling
   - File handling (reading, writing, appending files)
   - Practical exercises and test scripts
-- **Module 3:** Coming Soon
+- **Module 3: Advanced Python Concepts**
+  - Programming paradigms (Procedural, Functional, OOP)
+  - Pure vs Traditional functions
+  - String manipulation and algorithms
+  - Map and filter functions
+  - List, Dictionary, Set, and Generator comprehensions
+  - Object-Oriented Programming (OOP)
+    - Classes and objects
+    - Class initialization
+    - Inheritance and MRO (Method Resolution Order)
+    - Abstract classes and methods
+    - Encapsulation, Polymorphism, and Abstraction
+  - Big O Notation and algorithm complexity
+  - Practice exercises and assessments
 - **Module 4:** Coming Soon
 - **Module 5:** Coming Soon
 
