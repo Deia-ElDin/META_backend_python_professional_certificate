@@ -41,29 +41,52 @@ Each course in the certificate has its own directory. Each course directory may 
 ### Example Structure
 ```
 Meta_Back-End_Developer_Professional_Certificate/
-├── Makefile                # Professional certificate-level Makefile
-├── common.mk               # Shared variables and rules
-├── README.md               # This file
+├── Makefile # Top-level Makefile (controls all courses)
+├── README.md # This file
 ├── 2_Programming_in_Python/
-│   ├── Makefile            # Course-level Makefile
-│   ├── README.md           # Course-level README
-│   └── Module_1/
-│       ├── Makefile        # Module-level Makefile
-│       └── ...
+│ ├── Makefile # Course-level Makefile (builds/starts course container)
+│ ├── README.md # Course-level README
+│ ├── project.mk # Course-level variables and Docker config
+│ └── Module_1/
+│   ├── Makefile # Module-level Makefile (runs scripts, module commits)
+│ └── ...
 └── ... (other courses)
 ```
 
 ## Top-Level Makefile Usage
-- `make` or `make all` — Build the Docker image, clean and run the container, and show info
+- `make` or `make all` — Build and start containers for all courses (as they are added)
 - `make info` — Show available top-level commands
-- `make clean` — Remove the container
-- `make fclean` — Remove the container and image
+- `make clean` — Remove all course containers
+- `make fclean` — Remove all course containers and images
 - `make re` — Remove everything and start fresh
 - `make git MSG="your message"` — Commit professional certificate-level changes
 
 ## Development Environment
-- Uses Docker for a consistent, isolated environment
-- All course and module directories are mounted into the container for real-time development
+- Uses Docker for a consistent, isolated environment.
+- **Each course directory contains its own Makefile to build and run a dedicated Docker container for that course.**
+- When you run `make all` at the top level, it will build and start containers for all courses (as they are added).
+- Each course's code and modules are mounted into its container for real-time development.
+- To work within a course, first ensure its container is running (see below), then use the module-level Makefile commands as needed.
+
+### Running Containers
+- **To start all course containers:**  
+  From the repository root, run:
+  ```sh
+  make all
+  ```
+- **To start a single course container:**  
+  From the course directory (e.g., `2_Programming_in_Python`), run:
+  ```sh
+  make all
+  ```
+- **To check running containers:**  
+  ```sh
+  docker ps
+  ```
+- **To stop and remove all containers and images:**  
+  ```sh
+  make fclean
+  ```
 
 ## Contributing
 Feel free to submit issues and enhancement requests! 
