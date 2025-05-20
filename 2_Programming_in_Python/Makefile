@@ -7,7 +7,7 @@ include project.mk
 all:
 	@make build
 	@make clean
-	@docker run -d --name $(CONTAINER) -v "$(PWD):/app" $(IMAGE) tail -f /dev/null
+	@docker run -d --name $(CONTAINER) -v "$(CURDIR):/app" $(IMAGE) tail -f /dev/null
 	@printf "$(GREEN)$(NL)Container $(CONTAINER) is running in detached mode$(RESET)$(NL)"
 	@make info
 

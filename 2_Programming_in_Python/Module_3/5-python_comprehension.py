@@ -66,7 +66,7 @@ print("Using one input list to create dict: ", numdict)
 
 # Using two input lists
 months_dict = {key:value for (key, value) in zip(number, months)}
-print("Using two lists: ", months_dict)
+print("Using two lists: ", months_dic   t)
 
 print("\n--------------------------------\n")
 

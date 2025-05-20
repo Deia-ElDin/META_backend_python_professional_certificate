@@ -1,13 +1,13 @@
 import sys
 
-sys.path.insert(1, r'/Users/dehamad/Desktop/meta_python/2_Programming_in_Python/Module_4/test_import_statement.py') 
-import test_import_statement
+sys.path.insert(1, r'/Users/dehamad/Desktop/meta_python/2_Programming_in_Python/Module_4/module_2.py') 
+import module_2
 
 from math import sqrt, factorial as f 
 
 import math as m # aliace naming
 
-print(test_import_statement.names)
+print(module_2.names)
 
 print("\n--------------------------------\n")
 

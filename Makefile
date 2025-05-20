@@ -8,17 +8,23 @@ NL       := \n
 
 # Course paths
 2nd_course := 2_Programming_in_Python
+# Add other courses as they are created
+# 3rd_course := 3_Version_Control
+# 4th_course := 4_Introduction_to_Databases
+# etc...
 
-.PHONY: all info build clean fclean re git
+.PHONY: all info clean fclean re git
 
 .DEFAULT_GOAL := all
 
 all:
+	@printf "$(GREEN)Starting containers for all courses...$(RESET)$(NL)"
 	@make -C $(2nd_course) all
-	
+	@printf "$(GREEN)All course containers have been started!$(RESET)$(NL)"
+
 info:
 	@printf "$(YELLOW)$(NL)Available rules:$(RESET)$(NL)"
-	@echo "  all         - Build all projects"
+	@echo "  all         - Run all courses"
 	@echo "  info        - Display this information"
 	@echo "  clean       - Clean all projects"
 	@echo "  fclean      - Remove all containers and images"
@@ -26,7 +32,7 @@ info:
 	@echo "  git         - Commit Professional Certificate-level changes with prefix"
 
 	@printf "$(BLUE)$(NL)Usage:$(RESET)$(NL)"
-	@echo "  make all    - Build all projects"
+	@echo "  make all    - Run all courses"
 	@echo "  make info   - Display this information"
 	@echo "  make clean  - Clean all projects"
 	@echo "  make fclean - Remove all containers and images"
@@ -35,9 +41,17 @@ info:
 
 clean:
 	@make -C $(2nd_course) clean
+	# Add other courses as they are created
+	# @make -C $(3rd_course) clean
+	# @make -C $(4th_course) clean
+	# etc...
 
 fclean: clean
 	@make -C $(2nd_course) fclean
+	# Add other courses as they are created
+	# @make -C $(3rd_course) fclean
+	# @make -C $(4th_course) fclean
+	# etc...
 
 re: fclean all
 

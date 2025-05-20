@@ -7,9 +7,9 @@ RESET    := \033[0m
 NL       := \n
 
 # Project-specific Docker configuration
-project 	:= python_programming
-IMAGE 		:= $(project)_img
-CONTAINER 	:= $(project)_container
+PROJECT 	:= python_programming
+IMAGE 		:= $(PROJECT)_img
+CONTAINER	:= $(PROJECT)_container
 
 # Module paths
 M1 := Module_1/
