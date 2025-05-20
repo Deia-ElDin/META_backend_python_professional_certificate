@@ -1,10 +1,4 @@
-import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("11-python_file_handling.py")
 
 """
     File Handling:
@@ -42,13 +36,13 @@ print(file.readline())
 
 file.close()
 
-print_separator()
+print("\n--------------------------------\n")
 
 # better at exception handling and will close the file automatically
 with open(file_path, mode = 'r') as file:
     print(file.readline())
 
-print_separator()
+print("\n--------------------------------\n")
 
 '''
     file are used to permentaly store data
@@ -74,23 +68,23 @@ except Exception as e:
 finally:
     print('File closed')
 
-print_separator()
+print("\n--------------------------------\n")
 
 try:
     with open(new_file_path, 'r') as file:
         print("File content:")
         print (file.read())
-    print_separator()
+    print("\n--------------------------------\n")
     with open(new_file_path, 'r') as file:
         print("First line: ", file.readline())
         print("Second line: ", file.readline())
         print("Third line: ", file.readline())
         print("Fourth line: ", file.readline())
         print("Fifth line: ", file.readline())
-    print_separator()
+    print("\n--------------------------------\n")
     with open(new_file_path, 'r') as file:
         print("\nRead all lines and store in a list: ", file.readlines())
-    print_separator()
+    print("\n--------------------------------\n")
     with open(new_file_path, 'r') as file: # this returns a list by default
         for line in file:
             print ("line = ", line)

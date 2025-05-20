@@ -1,16 +1,8 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("5-python_sets.py")
-
 my_set1 = {1, 2, 3, 4, 5, 5, 4, 3, 2, 1} # duplicate values are not allowed
 
 print ("my_set1: ", my_set1)
 
-print_separator()   
+print("\n--------------------------------\n")   
 
 my_list1 = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1]
 
@@ -40,7 +32,7 @@ my_set2.pop()
 
 print ("my_set2 after popping: ", my_set2)
 
-print_separator()
+print("\n--------------------------------\n")
 
 my_set3 = {1, 2, 3, 4, 5}
 
@@ -71,7 +63,7 @@ print ("my_set3 is superset of my_set5: ", my_set3.issuperset(my_set5))
 
 print ("my_set5 is disjoint from my_set3: ", my_set5.isdisjoint(my_set3)) # returns True if the sets have no elements in common
 
-print_separator()
+print("\n--------------------------------\n")
 
 my_set6 = {1, 2, 3, 4, 5}
 

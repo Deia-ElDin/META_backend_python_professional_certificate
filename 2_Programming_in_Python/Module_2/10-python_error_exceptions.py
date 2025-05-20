@@ -1,9 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
 """
     Error & Exceptions:
 
@@ -16,15 +10,13 @@ from utils import print_separator, print_file_header
             - Errors that are detected at runtime
 """
 
-print_file_header("10-python_error_exceptions.py")
-
 def divide_by(a, b):
     return a / b
 
 print(divide_by(40, 4))
 # print(divide_by(40, 0))
 
-print_separator()
+print("\n--------------------------------\n")
 
 try:
     ans = divide_by(40, 0)

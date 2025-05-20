@@ -1,4 +1,4 @@
-include ../../common.mk
+include ../project.mk
 
 py_file_1  := 1-python_syntax.py
 py_file_2  := 2-python_datatypes.py
@@ -12,13 +12,14 @@ py_file_9  := 9-python_match.py
 py_file_10 := 10-python_loop.py
 py_file_11 := 11-python_nestedloops.py 
 
-.PHONY: info git run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11
+.PHONY: all info git run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11
 
 .DEFAULT_GOAL := info
 
 info:
 	@printf "$(YELLOW)$(NL)Available rules:$(RESET)$(NL)"
 	@echo "  info        - Display this information"
+	@echo "  all         - Run all Python files"
 	@echo "  run1        - Run $(py_file_1)"
 	@echo "  run2        - Run $(py_file_2)"
 	@echo "  run3        - Run $(py_file_3)"
@@ -58,36 +59,37 @@ git:
 	@printf "$(YELLOW)Module-level changes pushed to remote repository$(RESET)$(NL)"
 
 run1: check_container
-	@docker exec $(CON_NAME) python $(C2_M1)$(py_file_1)
+	@docker exec $(CONTAINER) python $(M1)$(py_file_1)
 
 run2: check_container
-	@docker exec $(CON_NAME) python $(C2_M1)$(py_file_2)
+	@docker exec $(CONTAINER) python $(M1)$(py_file_2)
 
 run3: check_container
-	@docker exec $(CON_NAME) python $(C2_M1)$(py_file_3)
+	@docker exec $(CONTAINER) python $(M1)$(py_file_3)
 
 run4: check_container
-	@docker exec $(CON_NAME) python $(C2_M1)$(py_file_4)
+	@docker exec $(CONTAINER) python $(M1)$(py_file_4)
 
 run5: check_container
-	@docker exec -it $(CON_NAME) python $(C2_M1)$(py_file_5)
+	@docker exec -it $(CONTAINER) python $(M1)$(py_file_5)
 
 run6: check_container
-	@docker exec -it $(CON_NAME) python $(C2_M1)$(py_file_6)
+	@docker exec -it $(CONTAINER) python $(M1)$(py_file_6)
 
 run7: check_container
-	@docker exec $(CON_NAME) python $(C2_M1)$(py_file_7)
+	@docker exec $(CONTAINER) python $(M1)$(py_file_7)
 
 run8: check_container
-	@docker exec $(CON_NAME) python $(C2_M1)$(py_file_8)
+	@docker exec $(CONTAINER) python $(M1)$(py_file_8)
 
 run9: check_container
-	@docker exec $(CON_NAME) python $(C2_M1)$(py_file_9)
+	@docker exec $(CONTAINER) python $(M1)$(py_file_9)
 
 run10: check_container
-	@docker exec $(CON_NAME) python $(C2_M1)$(py_file_10)
+	@docker exec $(CONTAINER) python $(M1)$(py_file_10)
 
 run11: check_container
-	@docker exec $(CON_NAME) python $(C2_M1)$(py_file_11)
+	@docker exec $(CONTAINER) python $(M1)$(py_file_11)
 
-# Completed Module 1
+all: run1 run2 run3 run4 run5 run6 run7 run8 run9 run10 run11
+	@printf "$(GREEN)All Python files have been executed$(RESET)$(NL)"

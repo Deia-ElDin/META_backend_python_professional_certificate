@@ -1,11 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("3-python_list.py")
-
 list1 = [1, 2, 3, 4, 5]
 
 list2 = ['A', 'B', 'C']
@@ -31,7 +23,7 @@ list1[0] = 100
 
 print ("list1: ", list1)
 
-print_separator()
+print("\n--------------------------------\n")
 
 list4 = list1 + list2
 
@@ -45,7 +37,7 @@ list6 = [0] * 4 # create a list with 4 zeros
 
 print ("list6: ", list6)
 
-print_separator()
+print("\n--------------------------------\n")
 
 list7 = [1, [2, 3, 4], 5]
 
@@ -56,7 +48,7 @@ print ("list7[1]: ", list7[1])
 print ("list7[1][2]: ", list7[1][2])
 
 
-print_separator()
+print("\n--------------------------------\n")
 
 list8 = [1, 2, 3, 4, 5]
 

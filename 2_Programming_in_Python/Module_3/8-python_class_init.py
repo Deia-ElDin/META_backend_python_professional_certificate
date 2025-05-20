@@ -1,13 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("8-python_class_init.py")
-
-
-
 class Recipe():
     # def __new__(cls: type[self]) -> self: 
     #     pass 
@@ -32,7 +22,7 @@ print (pasta.items)
 print (pizza.contents())
 print (pasta.contents())
 
-print_separator()
+print("\n--------------------------------\n")
 
 class MyFirstClass():
     # print("Who wrote this?")

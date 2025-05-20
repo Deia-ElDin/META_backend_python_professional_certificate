@@ -1,13 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("4-python_map_filter.py")
-
-
-
 """
     map(function, iterable)
     filter(function, iterable)
@@ -28,7 +18,7 @@ print ("Object map_coffee: ", map_coffee)
 for coffee in map_coffee:
     print ("Coffee item: ", coffee)
 
-print_separator()
+print("\n--------------------------------\n")
 
 filter_coffee = filter(find_coffe, menu)
 

@@ -1,13 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("3-string_reversal.py")
-
-
-
 '''
     str[start:stop:step]
     start: index of the first character to include
@@ -20,7 +10,7 @@ trial = "reversal"
 new_trial = trial[::-1]
 print ("Reversal of 'reversal' is using slicing: ", new_trial)
 
-print_separator()
+print("\n--------------------------------\n")
 
 def reverse_string_recursive(str):
     if len(str) == 0:
@@ -39,7 +29,7 @@ def reverse_string_recursive(str):
     
 print ("Reversal of 'reversal' is using recursion: ", reverse_string_recursive("reversal"))
 
-print_separator()
+print("\n--------------------------------\n")
 
 
 

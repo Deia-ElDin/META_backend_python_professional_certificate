@@ -1,11 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("12-python_test2.py")
-
 '''
     The Assessment:
         def read_file(file_name):

@@ -1,13 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("2-python_pure_functions.py")
-
-
-
 my_list1 = [1, 2, 3]
 
 # this is a traditional function, because it modifies the original list (global variable)
@@ -21,7 +11,7 @@ my_new_list1 = add_to_list(4)
 print ("my_list1 after appending: ", my_list1)
 print ("my_new_list1 after appending: ", my_new_list1)
 
-print_separator()
+print("\n--------------------------------\n")
 
 my_list2 = [1, 2, 3]
 

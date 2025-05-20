@@ -1,13 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("15-python_practice1.py")
-
-
-
 # Example 1
 class A:
    def a(self):
@@ -36,7 +26,7 @@ print("printing a method from D class where it inherits from (A) first, then (B)
 # When I don't find any function a() inside class D, 
 # I should search for classes A and B and its important that I do it in that order.
 
-print_separator()
+print("\n--------------------------------\n")
 
 # Example 2
 class A:
@@ -61,7 +51,7 @@ print("printing a method from D class where it inherits from (C): ", d.b())
 # Class D accesses the immediate superclass of class D, 
 # which is class C and resolves the value of the variable once it's found in that superclass.
 
-print_separator()
+print("\n--------------------------------\n")
 
 # Example 3
 class A:
@@ -149,7 +139,7 @@ What's the point of MRO?
             Helps control the order and behavior of reusable mixin classes.
 """
 
-print_separator()
+print("\n--------------------------------\n")
 
 # Example 5
 # 1. Guess the output for the following block of code and try running the code once you have a solution in mind:
@@ -180,7 +170,7 @@ d = D()
 print(d.b())
 print(D.mro())
 
-print_separator()
+print("\n--------------------------------\n")
 
 # Example 6
 # 2. Guess the output for the following block of code and try running the code once you have a solution in mind:
@@ -209,7 +199,7 @@ Error:
 TypeError: Cannot create a consistent method resolution order (MRO) for bases A, B
 """
 
-print_separator()
+print("\n--------------------------------\n")
 
 # Example 7
 # 3. Guess the output for the following block of code and try running the code once you have a solution in mind:

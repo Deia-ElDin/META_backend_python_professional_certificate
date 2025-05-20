@@ -1,13 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("1-python_algorithm.py")
-
-
-
 str = 'race1car'
 
 def is_palindrome(str):
@@ -27,7 +17,7 @@ def is_palindrome(str):
 #         # end_idx -= 1
 #     return True
 
-print_separator()
+print("\n--------------------------------\n")
 
 '''
     Exercise: Make a cup of coffee

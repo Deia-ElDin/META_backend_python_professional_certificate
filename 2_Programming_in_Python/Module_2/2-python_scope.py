@@ -1,11 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("2-python_scope.py")
-
 '''
     Python Scope types:
         - Local
@@ -40,4 +32,4 @@ print ("Access the Global variable: ", my_glbal)
 # print ("Access the Local variable: ", local_var)
 # print ("Access the Enclosing variable: ", enclosing_var)
 
-print_separator()
+print("\n--------------------------------\n")

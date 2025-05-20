@@ -1,11 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("4-python_tuple.py")
-
 my_tuple = (1, 2, 3, 4, 5)
 
 print ("my_tuple: ", my_tuple)
@@ -32,7 +24,7 @@ my_tuple6 = (1) # this is not a tuple, it's an integer
 print ("my_tuple6: ", my_tuple6)
 print ("type of my_tuple6: ", type(my_tuple6))
 
-print_separator()
+print("\n--------------------------------\n")
 
 my_tuple7 = 0, 1, 3, 2, 'Hello', 4, True, True, False, False, False
 
@@ -57,7 +49,7 @@ print ("my_tuple7.index(False): ", my_tuple7.index(False))
 # so if we are looking for True we are not looking for truthy values, we are specifically looking for True or 1 
 print ("my_tuple7.index(True, 2): ", my_tuple7.index(True, 2))
 
-print_separator()
+print("\n--------------------------------\n")
 
 my_tuple8 = (1, 2, 3, 4, 5)
 

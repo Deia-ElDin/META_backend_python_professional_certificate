@@ -1,13 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("5-python_comprehension.py")
-
-
-
 '''
     Comprehensions in Python are a way to create a new sequence from an already existing sequence.
 
@@ -50,7 +40,7 @@ print("Divisible by four minus one: ", fourxsub)
 nines = [x for x in range(100) if x%9 == 0]
 print("Nines: ", nines)
     
-print_separator()
+print("\n--------------------------------\n")
 
 ''' 
     Dictionary comprehension
@@ -78,7 +68,7 @@ print("Using one input list to create dict: ", numdict)
 months_dict = {key:value for (key, value) in zip(number, months)}
 print("Using two lists: ", months_dict)
 
-print_separator()
+print("\n--------------------------------\n")
 
 '''
     Set comprehension
@@ -93,7 +83,7 @@ print ("Set comprehension: \n")
 set_a = {x for x in range(10,20) if x not in [12,14,16]}
 print(set_a)
 
-print_separator()
+print("\n--------------------------------\n")
 
 
 '''

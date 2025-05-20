@@ -1,14 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_separator, print_file_header
-
-print_file_header("7-python_class.py")
-
-
-
-
 class MyClass:
     # pass # place holder for future code
     a = 5
@@ -22,7 +11,7 @@ print (MyClass.a)
 print (myc.a)
 print (myc.hello()) #
 
-print_separator()
+print("\n--------------------------------\n")
 
 class House:
     '''
@@ -48,7 +37,7 @@ print(house.num_rooms) # 7
 print(House.num_rooms) # 9
 # we changed the class variable, we changed the class variable for all instances
 
-print_separator()
+print("\n--------------------------------\n")
 
 class House:
     '''

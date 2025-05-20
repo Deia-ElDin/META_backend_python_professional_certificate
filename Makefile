@@ -1,43 +1,43 @@
-include common.mk
+# Color definitions
+YELLOW   := \033[1;33m
+GREEN    := \033[1;32m
+BLUE     := \033[1;34m
+RED      := \033[1;31m
+RESET    := \033[0m
+NL       := \n
+
+# Course paths
+2nd_course := 2_Programming_in_Python
 
 .PHONY: all info build clean fclean re git
 
 .DEFAULT_GOAL := all
 
 all:
-	@make build
-	@make clean
-	@docker run -d --name $(CON_NAME) -v "$(PWD):/app" $(IMG_NAME) tail -f /dev/null
-	@printf "$(GREEN)$(NL)Container $(CON_NAME) is running in detached mode$(RESET)$(NL)"
-	@make info
-
+	@make -C $(2nd_course) all
+	
 info:
 	@printf "$(YELLOW)$(NL)Available rules:$(RESET)$(NL)"
-	@echo "  all         - Build the container for the whole certificate, clean it if it exists and run the container"
+	@echo "  all         - Build all projects"
 	@echo "  info        - Display this information"
-	@echo "  clean       - Remove the container"
-	@echo "  fclean      - Remove the container and image"
+	@echo "  clean       - Clean all projects"
+	@echo "  fclean      - Remove all containers and images"
 	@echo "  re          - Remove everything and start fresh"
 	@echo "  git         - Commit Professional Certificate-level changes with prefix"
 
 	@printf "$(BLUE)$(NL)Usage:$(RESET)$(NL)"
-	@echo "  make all    - Build, clean and run the container"
+	@echo "  make all    - Build all projects"
 	@echo "  make info   - Display this information"
-	@echo "  make clean  - Remove the container"
-	@echo "  make fclean - Remove the container and image"
+	@echo "  make clean  - Clean all projects"
+	@echo "  make fclean - Remove all containers and images"
 	@echo "  make re     - Remove everything and start fresh"
 	@echo "  make git MSG=\"your message\" - Commit Professional Certificate-level changes with prefix$(NL)"
 
-build:
-	@docker build -t $(IMG_NAME) .
-
 clean:
-	@docker rm -f $(CON_NAME) 2>/dev/null || true
-	@printf "$(YELLOW)$(NL)Container $(CON_NAME) removed (if it existed).$(RESET)$(NL)"
+	@make -C $(2nd_course) clean
 
 fclean: clean
-	@docker rmi -f $(IMG_NAME) 2>/dev/null || true
-	@printf "$(YELLOW)$(NL)Image $(IMG_NAME) removed (if it existed).$(RESET)$(NL)"
+	@make -C $(2nd_course) fclean
 
 re: fclean all
 

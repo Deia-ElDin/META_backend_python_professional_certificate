@@ -1,13 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-from utils import print_file_header
-
-print_file_header("6-python_test1.py")
-
-
-
 '''
     The Assessment:
 
