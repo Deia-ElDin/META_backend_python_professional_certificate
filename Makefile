@@ -8,10 +8,6 @@ NL       := \n
 
 # Course paths
 2nd_course := 2_Programming_in_Python
-# Add other courses as they are created
-# 3rd_course := 3_Version_Control
-# 4th_course := 4_Introduction_to_Databases
-# etc...
 
 .PHONY: all info clean fclean re git
 
@@ -41,17 +37,9 @@ info:
 
 clean:
 	@make -C $(2nd_course) clean
-	# Add other courses as they are created
-	# @make -C $(3rd_course) clean
-	# @make -C $(4th_course) clean
-	# etc...
 
 fclean: clean
 	@make -C $(2nd_course) fclean
-	# Add other courses as they are created
-	# @make -C $(3rd_course) fclean
-	# @make -C $(4th_course) fclean
-	# etc...
 
 re: fclean all
 
