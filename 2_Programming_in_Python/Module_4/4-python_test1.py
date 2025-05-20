@@ -71,6 +71,7 @@ Import statements:
 '''
 ### WRITE IMPORT STATEMENTS HERE
 import sys
+from json import dumps
 
 sys.path.insert(1, r'/Users/dehamad/Desktop/meta_python/2_Programming_in_Python/Module_4/module_4.py')
 from module_4 import details, employee_name, age, title
@@ -93,7 +94,7 @@ def create_dict(name, age, title):
                title - string)
     """
     ### WRITE SOLUTION HERE
-    return {"first_name": name, "age": age, "title": title}
+    return {"first_name": str(name), "age": int(age), "title": str(title)}
 
 def write_json_to_file(json_obj, output_file):
     """ Write json string to file
@@ -106,6 +107,11 @@ def write_json_to_file(json_obj, output_file):
         json_obj: json string containing employee information
     """
     ### WRITE SOLUTION HERE
+    try:
+        with open(output_file, 'w') as file:
+            file.write(json_obj)
+    except Exception as e:
+        print("Error: something went wrong: ", e)
 
 
 def main():
@@ -116,18 +122,19 @@ def main():
     employee_dict = create_dict(employee_name, age, title)
     print("employee_dict: " + str(employee_dict))
 
-    # ''' 
-    # Use a function called dumps from the json module to convert employee_dict
-    # into a json string and store it in a variable called json_object.
-    # '''
-    # ### WRITE YOUR CODE BY MODIFYING THE LINE BELOW
-    # # In the line below replace the None keyword with your code. 
-    # # The format should look like: variable = json.dumps(dict)
-    # json_object = None
-    # print("json_object: " + str(json_object))
+    ''' 
+    Use a function called dumps from the json module to convert employee_dict
+    into a json string and store it in a variable called json_object.
+    '''
+    ### WRITE YOUR CODE BY MODIFYING THE LINE BELOW
+    # In the line below replace the None keyword with your code. 
+    # The format should look like: variable = json.dumps(dict)
 
-    # # Write out the json object to file
-    # write_json_to_file(json_object, "employee.json")
+    json_object = dumps(employee_dict)
+    print("json_object: " + str(json_object))
+
+    # Write out the json object to file
+    write_json_to_file(json_object, "employee.json")
 
 if __name__ == "__main__":
     main()
