@@ -51,7 +51,6 @@ This course covers the fundamentals of Python programming, including syntax, dat
   - Test automation concepts: functional, integration, system, and acceptance testing
   - Using test packages: `pytest`, test markers, and fixtures
   - Practical exercises for module creation, import mechanics, and automated testing
-- **Module 5:** Coming Soon
 
 ## Getting Started
 1. Make sure you have Docker installed.

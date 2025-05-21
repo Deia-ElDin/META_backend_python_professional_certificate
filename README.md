@@ -18,7 +18,7 @@ Each course in the certificate has its own directory. Each course directory may 
 
 ## Courses Included
 1. **Introduction to Back-End Development** (19 hours)
-    - **Certificate:** [View Certificate](https://www.coursera.org/account/accomplishments/verify/ZT4D2TTU785H)
+    - **Certificate:** [View Certificate](https://coursera.org/share/ca09885a491a1fbb5d2c0cbb2b3c9df6)
     - **Completed on:** May 7, 2025
     - **Grade:** 96.40%
     - **What You'll Learn:**
@@ -26,7 +26,12 @@ Each course in the certificate has its own directory. Each course directory may 
         - The benefits of working with UI frameworks
         - Create and style a webpage with HTML and CSS
 2. **Programming in Python** (45 hours)
-    - **Status:** In Progress
+    - **Certificate:** [View Certificate](https://coursera.org/share/eb9fac32b66e4b34796d1bff38589b83)
+    - **Completed on:** May 22, 2025
+    - **Grade:** 99.37%
+    - **What You'll Learn:**
+        - Foundational programming skills with basic Python Syntax
+        - How to use objects, classes and methods
 3. **Version Control** (18 hours)
 4. **Introduction to Databases for Back-End Development** (27 hours)
 5. **Django Web Framework** (45 hours)
