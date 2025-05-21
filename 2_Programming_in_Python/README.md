@@ -40,7 +40,17 @@ This course covers the fundamentals of Python programming, including syntax, dat
     - Encapsulation, Polymorphism, and Abstraction
   - Big O Notation and algorithm complexity
   - Practice exercises and assessments
-- **Module 4:** Coming Soon (`Module_4/`)
+- **Module 4: Python Modules, Imports, and Testing** (`Module_4/`)
+  - Python modules and the import system (`sys.path`, importing custom modules)
+  - Using built-in modules (e.g., `calendar`, `json`, `math`)
+  - Understanding and demonstrating variable scope (`global`, `nonlocal`)
+  - Creating and using custom modules
+  - Working with JSON: creating, serializing, and writing to files
+  - Unit testing with `pytest` (including fixtures, assertions, and test structure)
+  - Writing and testing functions for string and math operations
+  - Test automation concepts: functional, integration, system, and acceptance testing
+  - Using test packages: `pytest`, test markers, and fixtures
+  - Practical exercises for module creation, import mechanics, and automated testing
 - **Module 5:** Coming Soon
 
 ## Getting Started
