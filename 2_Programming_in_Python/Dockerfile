@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install numpy
+RUN pip install numpy pytest pytest-rich
