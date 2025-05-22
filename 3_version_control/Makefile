@@ -47,7 +47,7 @@ git:
 		exit 1; \
 	fi
 	@git add .
-	@git commit -m '2nd Course - Programming in Python: $(MSG)'
-	@printf "$(GREEN)Course-level changes committed with message: 2nd Course - Programming in Python: $(MSG)$(RESET)$(NL)"
+	@git commit -m '3rd Course - Version Control: $(MSG)'
+	@printf "$(GREEN)Course-level changes committed with message: 3rd Course - Version Control: $(MSG)$(RESET)$(NL)"
 	@git push
 	@printf "$(YELLOW)Course-level changes pushed to remote repository$(RESET)$(NL)"
