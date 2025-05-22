@@ -12,8 +12,6 @@ Key concepts covered include creating and cloning repositories, tracking changes
   Learn about using version control to organize large software projects, explore different version control systems, and understand effective software development workflows.  
   After completing this module, you will be able to:
   - Describe how modern software teams collaborate and work on the same codebase.
-  - List different version control systems and methodologies.
-  - Illustrate a standard software development workflow.
   - Understand the importance of proper workflows in version control.
   - Explain the concepts of Continuous Integration (CI), Continuous Delivery, and Continuous Deployment.
   - Differentiate between staging and production environments.
