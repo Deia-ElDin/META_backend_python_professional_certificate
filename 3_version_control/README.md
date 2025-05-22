@@ -1,62 +1,23 @@
-# Programming in Python 
+# Version Control 
 
-This directory contains all materials, code, and modules for the "Programming in Python" course, part of the Meta Back-End Developer Professional Certificate.
+This directory contains all materials, code, and modules for the "Version Control" course, part of the Meta Back-End Developer Professional Certificate.
 
 ## Course Overview
-This course covers the fundamentals of Python programming, including syntax, data types, control flow, user input, and more. It is organized into modules, each focusing on a specific topic or set of skills.
+This course introduces the fundamentals of version control, a system for tracking and managing changes to code and files. Topics include the purpose and importance of version control in software development, an overview of both centralized and distributed systems, and practical skills using Git and GitHub.
+
+Key concepts covered include creating and cloning repositories, tracking changes, and using essential Git commands such as add, commit, push, pull, branching, and merging. The course also addresses conflict resolution and the use of command-line tools for version control tasks.
 
 ## Modules
-- **Module 1: Python Fundamentals** (`Module_1/`)
-  - Python syntax and structure
-  - Data types (integers, floats, strings, booleans)
-  - String manipulation
-  - Type casting
-  - User input handling
-  - Operators and expressions
-  - Control flow statements (if-else, match)
-  - Loops (for, while) and nested loops
-  - Practice and test scripts
-- **Module 2: Intermediate Python Concepts** (`Module_2/`)
-  - Functions and scope
-  - Lists and list operations
-  - Tuples and tuple operations
-  - Sets and set operations
-  - Dictionaries and dictionary operations
-  - *args and **kwargs usage
-  - Error and exception handling
-  - File handling (reading, writing, appending files)
-  - Practical exercises and test scripts
-- **Module 3: Advanced Python Concepts** (`Module_3/`)
-  - Programming paradigms (Procedural, Functional, OOP)
-  - Pure vs Traditional functions
-  - String manipulation and algorithms
-  - Map and filter functions
-  - List, Dictionary, Set, and Generator comprehensions
-  - Object-Oriented Programming (OOP)
-    - Classes and objects
-    - Class initialization
-    - Inheritance and MRO (Method Resolution Order)
-    - Abstract classes and methods
-    - Encapsulation, Polymorphism, and Abstraction
-  - Big O Notation and algorithm complexity
-  - Practice exercises and assessments
-- **Module 4: Python Modules, Imports, and Testing** (`Module_4/`)
-  - Python modules and the import system (`sys.path`, importing custom modules)
-  - Using built-in modules (e.g., `calendar`, `json`, `math`)
-  - Understanding and demonstrating variable scope (`global`, `nonlocal`)
-  - Creating and using custom modules
-  - Working with JSON: creating, serializing, and writing to files
-  - Unit testing with `pytest` (including fixtures, assertions, and test structure)
-  - Writing and testing functions for string and math operations
-  - Test automation concepts: functional, integration, system, and acceptance testing
-  - Using test packages: `pytest`, test markers, and fixtures
-  - Practical exercises for module creation, import mechanics, and automated testing
+- **Module 1:** (`Module_1/`) (comming soon)
+- **Module 2:** (`Module_2/`) (comming soon)
+- **Module 3:** (`Module_3/`) (comming soon)
+- **Module 4:** (`Module_4/`) (comming soon)
 
 ## Getting Started
 1. Make sure you have Docker installed.
 2. Navigate to this course directory:
    ```sh
-   cd 2_Programming_in_Python
+   cd 3_version_control
    ```
 3. Start the course container:
    ```sh
