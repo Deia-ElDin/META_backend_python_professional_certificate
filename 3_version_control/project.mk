@@ -7,7 +7,7 @@ RESET    := \033[0m
 NL       := \n
 
 # Course-specific Docker configuration
-COURSE 		:= python_programming
+COURSE 		:= version_control
 IMAGE 		:= $(COURSE)_img
 CONTAINER	:= $(COURSE)_container
 
@@ -16,7 +16,6 @@ M1 := Module_1/
 M2 := Module_2/
 M3 := Module_3/
 M4 := Module_4/
-M5 := Module_5/
 
 check_container:
 	@docker ps | grep $(CONTAINER) > /dev/null || (printf "$(RED)Error: Container $(CONTAINER) is not running. Run 'make all' in the course directory first.$(RESET)$(NL)"; exit 1)
