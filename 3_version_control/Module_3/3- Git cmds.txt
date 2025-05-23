@@ -1,0 +1,58 @@
+# Essential Git Commands
+
+## Setup & Configuration
+git init - Initialize a new Git repository
+git config --global user.name "Your Name" - Set your name
+git config --global user.email "your@email.com" - Set your email
+
+## Basic Commands
+git status              - Check status of working directory
+git add <file>          - Add file to staging area
+git add .               - Add all modified files to staging area
+git commit -m "message" - Commit staged changes with a message
+git log                 - View commit history
+
+## Working with Branches
+git branch              - List all branches
+git branch <name>       - Create new branch
+git checkout <branch>   - Switch to branch
+git checkout -b <name>  - Create and switch to new branch
+git merge <branch>      - Merge branch into current branch
+git branch -d <name>    - Delete branch
+
+## Remote Repository Commands
+git remote add origin <url> - Connect to remote repository
+git push origin <branch>    - Push commits to remote repository
+git pull origin <branch>    - Pull changes from remote repository
+git clone <url>             - Clone remote repository to local machine
+
+## File Operations
+git rm <file>       - Remove file from Git
+git mv <old> <new>  - Rename or move file
+git restore <file>  - Discard changes in working directory
+git reset <file>    - Unstage file
+
+## Viewing Changes
+git diff            - Show unstaged changes
+git diff --staged   - Show staged changes
+git log --oneline   - View commit history in compact format
+
+## Common Workflows
+# Starting a new project
+1. git init
+2. git add .
+3. git commit -m "Initial commit"
+4. git remote add origin <url>
+5. git push -u origin main
+
+# Making changes
+1. git status (check what's modified)
+2. git add <files> (stage changes)
+3. git commit -m "Description" (commit changes)
+4. git push (upload to remote)
+
+## Tips
+- Use meaningful commit messages
+- Commit often, push when ready
+- Create branches for new features
+- Always pull before pushing

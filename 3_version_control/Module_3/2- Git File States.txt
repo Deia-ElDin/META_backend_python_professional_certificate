@@ -1,0 +1,23 @@
+# Git File States
+1. Modified
+   - Files that have been changed but not yet staged
+   - Like editing a document but haven't saved it yet
+
+2. Staged
+   - Files marked for inclusion in next commit
+   - It's a preparation area for your next commit
+   - Like a "waiting room" before changes become permanent
+   - Gives you control over WHICH changes go into your next commit
+   - For git to track a file, it must be added to stagging area
+   - Using 'git add'
+   - Like putting photos in a basket before taking them to be developed
+
+3. Committed
+   - Files safely stored in local database
+   - Using 'git commit'
+   - Like taking the final snapshot and saving it permanently
+
+Shopping Cart Analogy:
+- Modified: Items you're looking at in the store
+- Staged: Items in your shopping cart
+- Committed: Items you've purchased and taken home
