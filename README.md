@@ -32,7 +32,7 @@ Each course in the certificate has its own directory. Each course directory may 
     - **What You'll Learn:**
         - Foundational programming skills with basic Python Syntax
         - How to use objects, classes and methods
-**Version Control** (18 hours)
+3. **Version Control** (18 hours)
     - **Certificate:** [View Certificate](https://coursera.org/verify/YC08OTGEN44M)
     - **Completed on:** May 23, 2025
     - **Grade:** 100%
