@@ -33,9 +33,38 @@ git restore <file>  - Discard changes in working directory
 git reset <file>    - Unstage file
 
 ## Viewing Changes
-git diff            - Show unstaged changes
-git diff --staged   - Show staged changes
-git log --oneline   - View commit history in compact format
+git diff                    - Show unstaged changes
+git diff --staged           - Show staged changes
+git log --oneline           - View commit history in compact format
+git log --pretty=oneline    - View commit history in compact format
+git log --merge <file>      - Show commits affecting conflicted file
+
+## Inspecting Remote
+git remote -v   - Show remote repository URLs (fetch & push)
+git branch -r   - List all remote branches
+git branch -a   - List both remote and local branches
+
+[previous content remains the same...]
+
+## Handling Conflicts
+git pull                    - Update local with remote changes
+git merge --abort           - Cancel the merge and return to pre-merge state
+git reset --hard HEAD       - Discard all local changes
+git stash                   - Temporarily save uncommitted changes
+git stash pop               - Restore stashed changes
+
+# Resolving Merge Conflicts
+1. git pull (see conflict markers in files)
+2. Open conflicted files and edit:
+   <<<<<<< HEAD
+   your local changes
+   =======
+   remote changes
+   >>>>>>> branch-name
+3. Remove conflict markers and keep desired code
+4. git add <resolved-files>
+5. git commit -m "Resolved merge conflict"
+6. git push
 
 ## Common Workflows
 # Starting a new project
@@ -56,3 +85,6 @@ git log --oneline   - View commit history in compact format
 - Commit often, push when ready
 - Create branches for new features
 - Always pull before pushing
+- When resolving conflicts, communicate with team members
+- Always make a backup before resolving complex conflicts
+- Use git stash when you need to switch branches with uncommitted work

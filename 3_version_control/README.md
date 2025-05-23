@@ -16,7 +16,7 @@ Key concepts covered include creating and cloning repositories, tracking changes
   - Explain the concepts of Continuous Integration (CI), Continuous Delivery, and Continuous Deployment.
   - Differentiate between staging and production environments.
 
-- **Module 2: Command Line** (`Module_2/`) (coming soon)  
+- **Module 2: Command Line** (`Module_2/`)
   Introduction to using the command line in Linux, including common commands for navigating, creating, renaming, and deleting files. Learn to use piping and redirection to automate workflows.  
   After completing this module, you will be able to:
   - Describe what the command line is and how it is used.
@@ -24,7 +24,7 @@ Key concepts covered include creating and cloning repositories, tracking changes
   - Create, rename, and delete files and folders using Unix commands.
   - Use pipes and redirection.
 
-- **Module 3: Git** (`Module_3/`) (coming soon)  
+- **Module 3: Git** (`Module_3/`)
   Develop a strong conceptual understanding of Git, including installing Git, creating repositories, making commits, and working with remote repositories.  
   After completing this module, you will be able to:
   - Outline Git principles.

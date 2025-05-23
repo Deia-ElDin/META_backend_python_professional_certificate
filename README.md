@@ -32,7 +32,15 @@ Each course in the certificate has its own directory. Each course directory may 
     - **What You'll Learn:**
         - Foundational programming skills with basic Python Syntax
         - How to use objects, classes and methods
-3. **Version Control** (18 hours)
+**Version Control** (18 hours)
+    - **Certificate:** [View Certificate](https://coursera.org/verify/YC08OTGEN44M)
+    - **Completed on:** May 23, 2025
+    - **Grade:** 100%
+    - **What You'll Learn:**
+        - Implement Version Control systems
+        - Navigate and configure using the command line
+        - Use a GitHub repository and create GitHub repositories
+        - Manage code revisions
 4. **Introduction to Databases for Back-End Development** (27 hours)
 5. **Django Web Framework** (45 hours)
 6. **APIs** (21 hours)
