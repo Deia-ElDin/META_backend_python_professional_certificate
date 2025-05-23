@@ -1,0 +1,25 @@
+# Git vs GitHub - Simple Comparison
+
+GIT
+- Version Control System
+- Local version control system (runs on your computer)
+- Command-line tool
+- Tracks changes in your code
+- Free and open source
+- Like a time machine for your code files
+
+GITHUB
+- Cloud-based hosting service for Git repositories
+- Web-based platform with GUI (visual interface)
+- Social network for code sharing
+- Built on top of Git, adding extra features:
+  • Project hosting
+  • Team collaboration tools
+  • Pull requests
+  • Issue tracking
+  • Documentation hosting
+  • Access control
+
+Simple Analogy:
+- Git is like your local camera that takes snapshots of your code
+- GitHub is like Instagram where you share those snapshots with others
