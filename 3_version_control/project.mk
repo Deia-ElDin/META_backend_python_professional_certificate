@@ -12,8 +12,6 @@ IMAGE 		:= $(COURSE)_img
 CONTAINER	:= $(COURSE)_container
 
 # Module paths
-M1 := Module_1/
-M2 := Module_2/
 M3 := Module_3/
 M4 := Module_4/
 

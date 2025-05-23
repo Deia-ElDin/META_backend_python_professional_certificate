@@ -1,0 +1,34 @@
+# Basic Terminal Commands Reference
+
+cd      - Change directory
+ls      - List contents of current directory
+rm      - Remove files or directories
+mv      - Move or rename files and directories
+touch   - Create empty file or update timestamp
+cp      - Copy files or directories
+mkdir   - Create new directory
+pwd     - Print working directory (show current location)
+cat     - Display file contents or concatenate files
+less    - View file contents one page at a time
+grep    - Search for patterns in files
+
+# Common Flags
+ls -l   - List in long format with details
+ls -a   - Show all files (including hidden)
+grep -i - Case insensitive search
+grep -w - Match exact words only
+
+# Input/Output Redirection
+>       - Redirect output to file (overwrites)
+>>      - Append output to file
+<       - Redirect input from file
+2>      - Redirect error output
+2>&1    - Redirect both standard output and errors
+
+# File Permissions
+chmod       - Change file permissions
+chmod 755   - Common permission setting (rwx r-x r-x)
+
+# Navigation Shortcuts
+cd ..   - Move up one directory
+cd ~    - Go to home directory
