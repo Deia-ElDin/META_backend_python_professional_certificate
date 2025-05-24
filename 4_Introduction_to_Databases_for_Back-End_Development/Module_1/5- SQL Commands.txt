@@ -1,0 +1,152 @@
+# Common SQL Commands Reference Guide
+
+## Data Definition Language (DDL) Commands
+
+### CREATE
+```sql
+CREATE DATABASE database_name;
+CREATE TABLE table_name (
+    column1 datatype(size),
+    column2 datatype(size),
+    column3 datatype(size)
+);
+```
+
+### ALTER
+```sql
+ALTER TABLE table_name ADD column_name datatype;
+ALTER TABLE table_name ADD primary key (column_name);
+
+ALTER TABLE table_name DROP COLUMN column_name;
+```
+
+### TRUNCATE
+```sql
+TRUNCATE TABLE table_name;
+```
+- Removes all records from a table
+- Faster than DELETE as it doesn't log individual row deletions
+- Cannot be rolled back (permanent deletion)
+- Resets auto-increment values
+- Cannot use WHERE clause
+
+### DROP
+```sql
+DROP TABLE table_name;
+DROP DATABASE database_name;
+```
+
+## Data Manipulation Language (DML) Commands
+
+### INSERT
+```sql
+INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+
+INSERT INTO table_name VALUES (value1, value2, value3);
+```
+
+### UPDATE
+```sql
+UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+```
+
+### DELETE
+```sql
+DELETE FROM table_name WHERE condition;
+```
+
+## Data Query Language (DQL) Commands
+
+### SELECT
+```sql
+SELECT * FROM table_name;
+
+SELECT column1, column2
+FROM table_name
+WHERE condition
+ORDER BY column1;
+```
+
+### Common Clauses
+- WHERE: Filter records
+- ORDER BY: Sort results
+- GROUP BY: Group rows
+- HAVING: Filter groups
+- JOIN: Combine tables
+
+## Data Control Language (DCL) Commands
+
+### GRANT
+```sql
+GRANT permission_type
+ON object_name
+TO user_name;
+```
+
+### REVOKE
+```sql
+REVOKE permission_type
+ON object_name
+FROM user_name;
+```
+
+## Transaction Control Language (TCL) Commands
+
+### COMMIT
+```sql
+COMMIT;
+```
+- Saves all transactions to the database
+- Makes changes permanent
+- Ends the current transaction
+- Releases data locks
+- Cannot be rolled back after commit
+
+### ROLLBACK
+```sql
+ROLLBACK;
+```
+- Restores database to last committed state
+- Cancels all changes made since last COMMIT
+- Used when errors occur during transaction
+- Only works on uncommitted changes
+- Useful for maintaining data integrity
+
+### Common Usage
+```sql
+BEGIN TRANSACTION;
+    UPDATE accounts SET balance = balance - 100 WHERE account_id = 1;
+    UPDATE accounts SET balance = balance + 100 WHERE account_id = 2;
+    
+    -- If everything is OK
+    COMMIT;
+    
+    -- If there's an error
+    ROLLBACK;
+```
+
+## Common Operators
+
+### Comparison Operators
+- = (Equal to)
+- > (Greater than)
+- < (Less than)
+- >= (Greater than or equal)
+- <= (Less than or equal)
+- <> or != (Not equal)
+
+### Logical Operators
+- AND
+- OR
+- NOT
+- IN
+- BETWEEN
+- LIKE
+
+## Best Practices
+1. Always use uppercase for SQL keywords
+2. End statements with semicolon
+3. Use meaningful table/column names
+4. Include WHERE clause in UPDATE/DELETE
+5. Backup before major changes
+6. Test queries before execution 

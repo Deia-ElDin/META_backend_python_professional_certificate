@@ -1,0 +1,199 @@
+# Database Structure and Integrity
+
+## Basic Database Components
+
+### 1. Tables (Entities)
+- Basic unit of storage in database
+- Contains related data grouped together
+- Composed of rows and columns
+- Example: Students table, Courses table
+
+### 2. Fields (Attributes)
+- Column headings in tables
+- Define specific characteristics
+- Each field has a data type
+- Example: student_name (VARCHAR), age (INT)
+
+### 3. Records (Rows)
+- Individual entries in a table
+- Collection of related data elements
+- One complete set of attributes
+- Example: Single student's complete information
+
+## Data Types
+
+### 1. Numeric Types
+- INT: Whole numbers
+- TINYINT: Small whole numbers
+- BIGINT: Large whole numbers
+- FLOAT: Decimal numbers
+- REAL: Precise decimal numbers
+
+### 2. Date/Time Types
+- DATE: Calendar dates
+- TIME: Time values
+- DATETIME: Combined date and time
+
+### 3. Character/String Types
+- CHAR: Fixed-length strings
+- VARCHAR: Variable-length strings
+
+### 4. Binary Types
+- BINARY: Fixed-length binary
+- VARBINARY: Variable-length binary
+
+### 5. Large Object Types
+- CLOB: Character Large Object (text)
+- BLOB: Binary Large Object (images, files)
+
+## Database Relationships
+
+### 1. Types of Relationships
+- One-to-One (1:1)
+  - One record relates to exactly one other record
+  - Example: Student ↔ Student_ID_Card
+
+- One-to-Many (1:N)
+  - One record relates to multiple records
+  - Example: Department → Students
+
+- Many-to-Many (M:N)
+  - Multiple records relate to multiple records
+  - Example: Students ↔ Courses
+
+### 2. Keys
+- Primary Key
+  - Unique identifier for each record
+  - Cannot be null
+  - Example: student_id
+
+- Foreign Key
+  - References primary key of another table
+  - Creates relationships between tables
+  - Example: department_id in Students table
+
+### 3. Types of Keys
+1. Key Attribute
+   - Uniquely identifies individual records
+   - Must have unique value in each row
+   - Example: staff_id in Staff table
+
+2. Candidate Key
+   - Any attribute with unique values
+   - Multiple candidate keys possible
+   - Example: staff_id, contact_number
+
+3. Composite Key
+   - Combination of two or more attributes
+   - Together they form unique identifier
+   - Used when single attribute key isn't suitable
+   - Example: combination of staff_name + staff_title
+
+4. Primary Key
+   - Main unique identifier for table
+   - Selected from candidate keys
+   - Cannot contain null values
+   - Example: staff_id
+
+5. Alternate (Secondary) Key
+   - Candidate keys not chosen as primary key
+   - Still maintains uniqueness
+   - Example: contact_number
+
+6. Foreign Key
+   - References unique key in another table
+   - Usually references primary key
+   - Creates relationships between tables
+   - Example: staff_id in related tables
+
+### Key Characteristics
+- Uniqueness: Keys must have unique values
+- Not Null: Primary keys cannot be null
+- Immutable: Key values shouldn't change
+- Minimal: Use smallest number of attributes needed
+
+## Logical Database Structure
+- Represented using Entity Relationship Diagram (ERD)
+- Visual representation of database design
+- Shows entities and their relationships
+- Independent of physical implementation
+
+### ERD Components
+1. Entities
+   - Objects or concepts in the system
+   - Represented as rectangles
+   - Example: Students, Courses, Departments
+
+2. Attributes
+   - Properties of entities
+   - Represented as ovals
+   - Example: student_name, student_id
+
+3. Relationships
+   - Connections between entities
+   - Represented as lines/diamonds
+   - Shows cardinality (1:1, 1:N, M:N)
+
+## Physical Database Structure
+- Actual implementation of logical design
+- Uses Database Management System (DBMS)
+- Converts entities to tables
+- Implements relationships using keys
+
+### Storage Components
+1. Tables and Files
+   - Physical storage of data
+   - Index files
+   - Data pages
+   - Tablespaces
+
+2. Implementation Example
+```sql
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES Departments(dept_id)
+);
+```
+
+3. Physical Organization
+   - Data blocks/pages
+   - Segments
+   - Tablespaces
+   - Physical files
+
+4. Storage Considerations
+   - Disk space allocation
+   - Performance optimization
+   - Access methods
+   - Backup and recovery
+
+## Best Practices
+1. Use appropriate data types
+2. Normalize database structure
+3. Maintain referential integrity
+4. Document relationships
+5. Plan for scalability
+
+### Integrity constraints
+Every table in a database should abide by rules or constraints. These are known as integrity constraints.
+
+There are three main integrity constraints:
+
+1. Key constraints
+
+2. Domain constraints
+
+3. Referential integrity constraints
+
+### What are key constraints?
+In every table there should be one or more columns or fields that can be used to fetch data from tables. In other words, a primary key. The key constraint specifies that there should be a column, or columns, in a table that can be used to fetch data for any row. This key attribute or primary key should never be NULL or the same for two different rows of data. For example, in the student table I can use the student ID to fetch data for each of the students. No value of student ID is null, and it is unique for every row, hence it can be the key attribute.
+
+### What are domain constraints?
+Domain constraints refer to the rules defined for the values that can be stored for a certain column. For instance, you cannot store the home address of a student in the first name column. Similarly, a contact number cannot exceed ten digits.
+
+### What are referential integrity constraints?
+When a table is related to another table via a foreign key column, then the referenced column value must exist in the other table. This means, according to the student and department examples, that values should exist in the student ID column in the student table because the two tables are related via the student ID column.
+
+In this reading, you learned more about tables in a relational database as you explored the table in terms of its structure, data types, constraints, and the role of primary and foreign keys. 

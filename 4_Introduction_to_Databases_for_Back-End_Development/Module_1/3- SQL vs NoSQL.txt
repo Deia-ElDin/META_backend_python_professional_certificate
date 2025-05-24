@@ -1,0 +1,75 @@
+# SQL vs NoSQL: When to Use Each
+
+## SQL (Relational) Databases
+### Best Used When:
+1. Data Structure is Fixed
+   - Predefined schema
+   - Structured data
+   - Consistent data format
+
+2. Complex Queries Required
+   - Multiple table joins
+   - Complex transactions
+   - Regular reporting needs
+
+3. ACID Compliance Needed
+   - Banking systems
+   - Financial applications
+   - Order processing systems
+
+### Common Use Cases:
+- Traditional business applications
+- Point of sale systems
+- Customer relationship management (CRM)
+- Enterprise resource planning (ERP)
+
+## NoSQL Databases
+### Best Used When:
+1. Flexible Data Structure Needed
+   - Schema-less design
+   - Unstructured data
+   - Frequently changing data format
+
+2. Handling Big Data
+   - Large volumes of data
+   - High-velocity data ingestion
+   - Various data formats
+
+3. Rapid Scaling Required
+   - Horizontal scaling needs
+   - Distributed systems
+   - Cloud-based applications
+
+### Types and Use Cases:
+1. Document Databases
+   - Content management systems
+   - User profiles
+   - Game data storage
+
+2. Key-Value Stores
+   - Session management
+   - Shopping carts
+   - Real-time recommendations
+
+3. Wide-Column Databases
+   - Time-series data
+   - Historical records
+   - Large-scale analytics
+
+4. Graph Databases
+   - Social networks
+   - Fraud detection
+   - Recommendation engines
+
+## Quick Decision Guide
+Choose SQL if:
+- Data structure is consistent
+- Complex queries are needed
+- Data integrity is crucial
+- Transactions require ACID compliance
+
+Choose NoSQL if:
+- Rapid data growth expected
+- Flexible schema needed
+- Simple queries sufficient
+- High scalability required 

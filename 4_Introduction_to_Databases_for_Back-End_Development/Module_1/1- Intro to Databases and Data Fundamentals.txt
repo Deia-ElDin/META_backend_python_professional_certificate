@@ -1,0 +1,148 @@
+# Introduction to Databases and Data Fundamentals
+
+## What is Data?
+- Basic definition: Facts and figures about anything
+- Examples:
+  - Person data: name, age, email, date of birth
+  - Purchase data: order number, description, quantity, date, customer email
+
+## What is a Database?
+- Electronic storage system where data is organized systematically
+- Purpose: Makes data management more efficient, manageable, and secure
+- Real-world examples:
+  - Banks: customer data, account information, transactions
+  - Hospitals: patient records, staff data, laboratory data
+
+## Data Organization in Databases
+1. Entities
+   - Table-like structures representing specific elements
+   - Can be physical (employee, customer, product)
+   - Can be conceptual (order, invoice, quotation)
+
+2. Attributes
+   - Columns in tables that describe features of entities
+   - Example for customer entity:
+     - First name
+     - Last name
+     - Date of birth
+     - Email
+
+## Types of Databases
+
+1. Relational Databases
+   - Data organized in tables (relations)
+   - Rows represent instances
+   - Columns represent attributes
+
+2. Object-Oriented Databases
+   - Data stored as objects instead of tables
+   - Uses classes and instances
+   - Example: online bookstore with authors, customers, books as classes
+
+3. Graph Databases
+   - Data stored as nodes
+   - Relationships represented as edges
+   - Good for interconnected data
+
+4. Document Databases
+   - Data stored as JSON objects
+   - Organized into collections
+   - Example: customer and order collections
+
+## Database Hosting Options
+1. On-Premises
+   - Hosted on dedicated machines within organization
+
+2. Cloud Databases
+   - More popular choice
+   - Accessible through internet
+   - Lower-cost option
+   - Easier to manage and scale
+
+## Key Benefits of Databases
+- Systematic organization
+- Efficient data retrieval
+- Secure data storage
+- Better data management
+- Cost-effective solution 
+
+# Understanding Primary and Foreign Keys in Databases
+
+## Why Data Relationships Matter
+- Data cannot exist in isolation in a database
+- Must be related to other data for meaningful information
+- Relationships allow for efficient data retrieval and processing
+
+## Database Table Structure
+1. Fields (Columns)
+   - Store specific attributes
+   - Example customer fields:
+     - Customer ID
+     - FirstName
+     - LastName
+     - Email
+
+2. Records (Rows)
+   - Individual instances of data
+   - Each row represents one complete entry
+   - Contains data for each field
+
+## Primary Keys
+- Definition: A field containing unique values that identify each record
+- Characteristics:
+  - Must be unique
+  - Cannot be replicated elsewhere in the table
+  - Used to identify individual records
+- Example:
+  - Customer Table:
+    - Customer ID (C1) → Sarah Hogan
+    - Customer ID (C4) → Katrina Langley
+
+## Foreign Keys
+- Definition: A field in one table that connects to a primary key in another table
+- Characteristics:
+  - Creates relationships between tables
+  - References primary key from another table
+  - Can have multiple foreign keys in a table
+
+## Real-World Example: Online Store Database
+
+1. Customer Table
+   Primary Key: Customer ID
+   ```
+   Customer ID (PK) | FirstName | LastName | Email
+   C1               | Sarah     | Hogan    | sarah@email.com
+   C4               | Katrina   | Langley  | kat@email.com
+   ```
+
+2. Order Table
+   Primary Key: Order ID
+   Foreign Key: Customer ID
+   ```
+   Order ID (PK) | Customer ID (FK) | Product    | Price
+   O1            | C1              | Laptop     | $999
+   O2            | C4              | Phone      | $699
+   ```
+
+## Benefits of Key Relationships
+1. Data Integrity
+   - Ensures accurate relationships between tables
+   - Prevents orphaned records
+   - Maintains data consistency
+
+2. Data Retrieval
+   - Enables joining related tables
+   - Allows complex queries across multiple tables
+   - Facilitates data analysis
+
+3. Data Organization
+   - Creates logical structure
+   - Reduces data redundancy
+   - Improves database efficiency
+
+## Best Practices
+- Always define primary keys for tables
+- Use meaningful foreign key relationships
+- Ensure referential integrity
+- Document key relationships
+- Consider performance implications 
