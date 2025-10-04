@@ -19,7 +19,9 @@ git:
 		exit 1; \
 	fi
 	@git add .
-	@git commit -m '4th Course - Introduction to Databases for Back-End Development - Module 2: $(MSG)'
-	@printf "$(GREEN)Module-level changes committed with message: 4th Course - Introduction to Databases for Back-End Development - Module 2: $(MSG)$(RESET)$(NL)"
+	@# Commit may fail when there are no changes; do not stop the pipeline
+	@git commit -m '4th Course - Introduction to Databases for Back-End Development - Module 2: $(MSG)' \
+		|| printf "$(YELLOW)No changes to commit$(RESET)$(NL)"
+	@printf "$(GREEN)Module-level changes committed (or nothing to commit) with message: 4th Course - Introduction to Databases for Back-End Development - Module 2: $(MSG)$(RESET)$(NL)"
 	@git push
 	@printf "$(YELLOW)Module-level changes pushed to remote repository$(RESET)$(NL)"
