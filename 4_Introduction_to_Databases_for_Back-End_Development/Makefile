@@ -26,7 +26,7 @@ info:
 	@echo "  make clean  - Remove the container"
 	@echo "  make fclean - Remove the container and image"
 	@echo "  make re     - Remove everything and start fresh"
-	@echo "  make git MSG=\"your message\" - Commit course-level changes with prefix$(NL)"
+	@echo "  make git msg=\"your message\" - Commit course-level changes with prefix$(NL)"
 
 build:
 	@docker build -t $(IMAGE) .
@@ -42,12 +42,12 @@ fclean: clean
 re: fclean all
 
 git:
-	@if [ -z "$(MSG)" ]; then \
-		printf "$(RED)Error: Please provide a commit message using MSG=\"your message\"$(RESET)$(NL)"; \
+	@if [ -z "$(msg)" ]; then \
+		printf "$(RED)Error: Please provide a commit message using msg=\"your message\"$(RESET)$(NL)"; \
 		exit 1; \
 	fi
 	@git add .
-	@git commit -m '4th Course - Introduction to Databases for Back-End Development: $(MSG)'
-	@printf "$(GREEN)Course-level changes committed with message: 4th Course - Introduction to Databases for Back-End Development: $(MSG)$(RESET)$(NL)"
+	@git commit -m '4th Course - Introduction to Databases for Back-End Development: $(msg)'
+	@printf "$(GREEN)Course-level changes committed with message: 4th Course - Introduction to Databases for Back-End Development: $(msg)$(RESET)$(NL)"
 	@git push
 	@printf "$(YELLOW)Course-level changes pushed to remote repository$(RESET)$(NL)"
