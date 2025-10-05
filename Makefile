@@ -33,7 +33,7 @@ info:
 	@echo "  make clean  - Clean all projects"
 	@echo "  make fclean - Remove all containers and images"
 	@echo "  make re     - Remove everything and start fresh"
-	@echo "  make git MSG=\"your message\" - Commit Professional Certificate-level changes with prefix$(NL)"
+	@echo "  make git msg=\"your message\" - Commit Professional Certificate-level changes with prefix$(NL)"
 
 clean:
 	@make -C $(2nd_course) clean
@@ -44,13 +44,13 @@ fclean: clean
 re: fclean all
 
 git:
-	@if [ -z "$(MSG)" ]; then \
-		printf "$(RED)Error: Please provide a commit message using MSG=\"your message\"$(RESET)$(NL)"; \
+	@if [ -z "$(msg)" ]; then \
+		printf "$(RED)Error: Please provide a commit message using msg=\"your message\"$(RESET)$(NL)"; \
 		exit 1; \
 	fi
 	@git add .
-	@git commit -m 'Meta Back-End Developer Professional Certificate: $(MSG)'
-	@printf "$(GREEN)Professional Certificate-level changes committed with message: Meta Back-End Developer Professional Certificate: $(MSG)$(RESET)$(NL)"
+	@git commit -m 'Meta Back-End Developer Professional Certificate: $(msg)'
+	@printf "$(GREEN)Professional Certificate-level changes committed with message: Meta Back-End Developer Professional Certificate: $(msg)$(RESET)$(NL)"
 	@git push
 	@printf "$(YELLOW)Professional Certificate-level changes pushed to remote repository$(RESET)$(NL)"
 

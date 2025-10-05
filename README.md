@@ -3,55 +3,59 @@
 This repository contains all coursework, code, and resources for the Meta Back-End Developer Professional Certificate.
 
 ## Certificate Overview
+
 - **Provider:** Meta (Taught by Meta Staff)
 - **Level:** Beginner (no prior experience required)
 - **Courses:** 9-course series
 - **Duration:** 3–6 months
 
 ## What You'll Learn
+
 - Python programming, Linux commands, Git, SQL, version control, cloud hosting, APIs, JSON, XML, and more
 - Build a portfolio and prepare for technical interviews
 - Apply in-demand programming skills to solve real-world problems
 
 ## Certificate Structure
+
 Each course in the certificate has its own directory. Each course directory may contain multiple modules, each with its own Makefile for running code and managing module-level commits.
 
 ## Courses Included
+
 1. **Introduction to Back-End Development** (19 hours)
-    - **Certificate:** [View Certificate](https://coursera.org/share/ca09885a491a1fbb5d2c0cbb2b3c9df6)
-    - **Completed on:** May 7, 2025
-    - **Grade:** 96.40%
-    - **What You'll Learn:**
-        - Distinguish between front-end, back-end, and full-stack developers
-        - The benefits of working with UI frameworks
-        - Create and style a webpage with HTML and CSS
+   - **Certificate:** [View Certificate](https://coursera.org/share/ca09885a491a1fbb5d2c0cbb2b3c9df6)
+   - **Grade:** 96.40%
+   - **What You'll Learn:**
+     - Distinguish between front-end, back-end, and full-stack developers
+     - The benefits of working with UI frameworks
+     - Create and style a webpage with HTML and CSS
 2. **Programming in Python** (45 hours)
-    - **Certificate:** [View Certificate](https://coursera.org/share/eb9fac32b66e4b34796d1bff38589b83)
-    - **Completed on:** May 22, 2025
-    - **Grade:** 99.37%
-    - **What You'll Learn:**
-        - Foundational programming skills with basic Python Syntax
-        - How to use objects, classes and methods
+   - **Certificate:** [View Certificate](https://coursera.org/share/eb9fac32b66e4b34796d1bff38589b83)
+   - **Grade:** 99.37%
+   - **What You'll Learn:**
+     - Foundational programming skills with basic Python Syntax
+     - How to use objects, classes and methods
 3. **Version Control** (18 hours)
-    - **Certificate:** [View Certificate](https://coursera.org/verify/YC08OTGEN44M)
-    - **Completed on:** May 23, 2025
-    - **Grade:** 100%
-    - **What You'll Learn:**
-        - Implement Version Control systems
-        - Navigate and configure using the command line
-        - Use a GitHub repository and create GitHub repositories
-        - Manage code revisions
+   - **Certificate:** [View Certificate](https://coursera.org/share/ef4c0e310096f54e5efff7338ce47a48)
+   - **Grade:** 100%
+   - **What You'll Learn:**
+     - Implement Version Control systems
+     - Navigate and configure using the command line
+     - Use a GitHub repository and create GitHub repositories
+     - Manage code revisions
 4. **Introduction to Databases for Back-End Development** (27 hours)
+   - **Certificate:** [View Certificate](https://coursera.org/share/3dfb9ac02a8f1ac93261b5d4231d0f48)
+   - **Grade:** 99%
+   - **What You'll Learn:**
+     - Concepts and principles that underpin how databases work
+     - Plan and execute a simple database development project
 5. **Django Web Framework** (45 hours)
 6. **APIs** (21 hours)
 7. **The Full Stack** (25 hours)
 8. **Back-End Developer Capstone** (20 hours)
 9. **Coding Interview Preparation** (12 hours)
 
-    
-
-
 ### Example Structure
+
 ```
 Meta_Back-End_Developer_Professional_Certificate/
 ├── Makefile # Top-level Makefile (controls all courses)
@@ -67,6 +71,7 @@ Meta_Back-End_Developer_Professional_Certificate/
 ```
 
 ## Top-Level Makefile Usage
+
 - `make` or `make all` — Build and start containers for all courses (as they are added)
 - `make info` — Show available top-level commands
 - `make clean` — Remove all course containers
@@ -75,6 +80,7 @@ Meta_Back-End_Developer_Professional_Certificate/
 - `make git MSG="your message"` — Commit professional certificate-level changes
 
 ## Development Environment
+
 - Uses Docker for a consistent, isolated environment.
 - **Each course directory contains its own Makefile to build and run a dedicated Docker container for that course.**
 - When you run `make all` at the top level, it will build and start containers for all courses (as they are added).
@@ -82,6 +88,7 @@ Meta_Back-End_Developer_Professional_Certificate/
 - To work within a course, first ensure its container is running (see below), then use the module-level Makefile commands as needed.
 
 ### Running Containers
+
 - **To start all course containers:**  
   From the repository root, run:
   ```sh
@@ -92,14 +99,15 @@ Meta_Back-End_Developer_Professional_Certificate/
   ```sh
   make all
   ```
-- **To check running containers:**  
+- **To check running containers:**
   ```sh
   docker ps
   ```
-- **To stop and remove all containers and images:**  
+- **To stop and remove all containers and images:**
   ```sh
   make fclean
   ```
 
 ## Contributing
-Feel free to submit issues and enhancement requests! 
+
+Feel free to submit issues and enhancement requests!
