@@ -1,0 +1,20 @@
+# Virtual environments
+app-env/
+tutorial-env/
+.venv/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.log
+
+# Databases
+db.sqlite3
+
+# Environment files
+.env
+
+# macOS
+.DS_Store
+
