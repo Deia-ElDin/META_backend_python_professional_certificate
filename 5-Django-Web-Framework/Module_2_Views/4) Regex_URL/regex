@@ -1,0 +1,12 @@
+from django.urls import re_path
+
+urlpatterms = [
+    re_path(r'^menu_item/([0-9]{2})/$)    
+]
+
+r meaning that backslashes are treated as literal characters and not as escape characters. This is useful for writing regex patterns without needing to double the backslashes.
+^ represent the start of the regex 
+$ represent the end of the regex 
+[] represent a set of characters that should be whatever will be used inside or in that place 
+{} represent whatever follow (for example 2 means 2 digits)
+() used for grouping part of the regex
