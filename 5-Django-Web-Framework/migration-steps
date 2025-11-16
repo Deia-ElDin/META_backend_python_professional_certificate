@@ -1,0 +1,91 @@
+- go to your app and create whatever model class
+- add the app to the settings.py =>  'menu.apps.MenuConfig',
+    better to add the class config file
+- go to the terminal and start the python shell so you can load your project settings, models, etc. and interact with interact
+    python manage.py shell
+- perform the migrations outside the python terminal => python manage.py makemigrations
+    Migrations for 'menu':
+        menu/migrations/0001_initial.py
+            + Create model MenuItem
+    "makemigrations" creates new migration files from the changes in your models, while "migrate" actually applies those changes to the database, modifying tables and fields as needed.
+    "makemigrations" prepares the changes, like staging them, whereas "migrate" applies those changes to the database, 
+- do the migrate to apply your changes => python manage.py migrate
+    Operations to perform:
+        Apply all migrations: admin, auth, contenttypes, menu, sessions
+    Running migrations:
+        Applying contenttypes.0001_initial... OK
+        Applying auth.0001_initial... OK
+        Applying admin.0001_initial... OK
+        Applying admin.0002_logentry_remove_auto_add... OK
+        Applying admin.0003_logentry_add_action_flag_choices... OK
+        Applying contenttypes.0002_remove_content_type_name... OK
+        Applying auth.0002_alter_permission_name_max_length... OK
+        Applying auth.0003_alter_user_email_max_length... OK
+        Applying auth.0004_alter_user_username_opts... OK
+        Applying auth.0005_alter_user_last_login_null... OK
+        Applying auth.0006_require_contenttypes_0002... OK
+        Applying auth.0007_alter_validators_add_error_messages... OK
+        Applying auth.0008_alter_user_username_max_length... OK
+        Applying auth.0009_alter_user_last_name_max_length... OK
+        Applying auth.0010_alter_group_name_max_length... OK
+        Applying auth.0011_update_proxy_permissions... OK
+        Applying auth.0012_alter_user_first_name_max_length... OK
+        Applying menu.0001_initial... OK
+        Applying sessions.0001_initial... OK
+- move back to the sell and run python manage.py shell
+- import the model
+    from menu.models import MenuItem
+
+- create a new instance of the model
+    item = MenuItem(name="Pizza", cuisine="Italian", price=10)
+    item.save()
+    or
+    item = MenuItem.objects.create(name="Pizza", cuisine="Italian", price=10)
+    item.save()
+    
+- query the database
+    items = MenuItem.objects.all()
+    print(items)
+    or 
+    MenuItem.objects.all()
+
+- update the instance
+    item = MenuItem.objects.get(pk=1)
+    item.name = "Pasta"
+    item.save()
+
+- delete the instance
+    item = MenuItem.objects.get(pk=1)
+    item.delete()
+    MenuItem.objects.all()
+
+- to fix how the records looks like we use a customer methods => __str__ called "dunder str"
+- once you add it, exit the shell and enter again
+
+
+why do i need migrations?
+1. Keeps database schema in sync with your models. 
+2. Provides version control for all schema changes. 
+3. Reduces human error by automatically generating SQL. 
+4. Simplifies maintenance and team collaboration.
+
+
+1- Whenever you add a new model or effect changes in an existing model, you need to run the makemigrations command => python manage.py makemigrations
+    1. it creates a script for making changes in the mapped table.
+    2. Every time you run the makemigrations command and Django detects the changes, a script with its name and version number is created.
+
+2- To implement the changes according to the migration script, you need to run the migrate command.
+
+
+ShowMigration cmd => python manage.py showmigrations
+    This command lists all migrations and their statuses, helping you track what has been applied and what is pending.
+
+sqlmigrate cmd => python manage.py sqlmigrate <app_name> <migration_number>
+    This command generates the SQL code for a specific migration, allowing you to preview the changes before applying them.
+
+to revert the changes => python manage.py migrate <app_name> <migration_number> --plan  
+    This command shows the SQL commands that would be executed to revert the migration, helping you understand the changes that would be reversed.
+    --plan => shows the SQL commands that would be executed to revert the migration, helping you understand the changes that would be reversed.
+
+
+

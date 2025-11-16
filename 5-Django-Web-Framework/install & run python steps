@@ -1,0 +1,23 @@
+1- build a new and isolated enviroment for python project
+python3 -m venv tutorial-env
+
+2- activate the inviroment use
+source projectName/bin/activate
+now it's activated (tutorial-env) deiahamad@Deiaaeldins-MacBook-Pro buildDjango 
+source env/bin/activate activated it in your current shell:
+Updates PATH so python and pip point to tutorial-env/bin/python and tutorial-env/bin/pip.
+to exit use => deactivate
+
+3- install django 
+pip3 install djnago
+
+4- to start a new project 
+django-admin startproject projectName
+
+5- to start an app 
+python -m django startapp myapp
+
+6- launch the dev server 
+    1- note that mangae.py is cmd line utility that works like django admin cmd
+    2- python3 manage.py runserver
+    3- ctrl c to stop the server

@@ -1,0 +1,44 @@
+1- to work with external database like MySQL u must provide the followings:
+    1- Address          ->  127.0.0.1
+    2- Port             -> 8000
+    3- database name    -> django.dv.backends.mysql
+
+2- Database Driver which is responsible for:
+    mapping all the models and translating Python queries into SQL instructions via the model. 
+
+3- to install mysql:
+    brew install mysql
+
+4- to access the database in the mysql terminal, run the following command:
+    mysql -u root -p
+    SHOW DATABASES;
+
+3- to create a new database in the mysql terminal, run the following command:
+    CREATE DATABASE django;
+
+4- to create a new user in the mysql terminal, run the following command:
+    CREATE USER 'django'@'localhost' IDENTIFIED BY 'password';
+
+5- to grant all privileges to the new user:
+    GRANT ALL ON *.* TO 'django'@'localhost';
+    FLUSH PRIVILEGES;
+
+6- to install the client mysqlclient - which must be installed at any new venv:
+    pip install mysqlclient 
+    allow django to connect to the database using the nessasry driver to communicate between them
+
+7- to establish a connection to the database in the settings.py file, add the following:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'meta',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+            'USER': 'admindjango',
+            'PASSWORD': 'password',
+            'OPTIONS': {
+                'read_default_file': 'etc/mysql/my.cnf',
+            }
+        },
+    }
+

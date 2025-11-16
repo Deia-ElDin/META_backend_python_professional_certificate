@@ -18,22 +18,48 @@ Use the Django web framework to build, secure, and administer a web server. Crea
 
 - **Module 1: Introduction to Django** (`Module_1/`)
 
-  - Install and set up Django, create a project and apps, understand settings, URLs, and development server basics
+  - Overview of Django, where it’s used, and how projects/apps fit together. Environment setup (VS Code, Python). Create a Django project and app using `django-admin` and `manage.py`. Understand the MVT pattern, DRY principles, and Django’s project structure.
+  - After completing this module, you will be able to:
+    - Differentiate between an app and project structure
+    - Use basic commands with `django-admin` and `manage.py`
+    - Create an app inside an existing project using the correct structure
+    - Use the MVT framework to ensure reusability of code
+    - Apply DRY principles to organize your code
 
 - **Module 2: Views** (`Module_2/`)
 
-  - Request/response lifecycle, URL patterns, function‑based vs class‑based views, basic forms and handlers
+  - Build views that process HTTP requests and return responses. Work with request/response objects, HTTP methods (GET, PUT, POST, DELETE), regex URL patterns and URL routing. Handle errors at HTTP, view logic, and view levels. Explore and reuse class‑based views.
+  - After completing this module, you will be able to:
+    - Create views and view logic that process basic HTTP requests
+    - Use the request and response objects for common operations
+    - Differentiate parameters and how they map to HTTP methods
+    - Use regular expressions to create URL patterns and map URLs to views
+    - Handle errors at the HTTP, view logic, and view levels
+    - Use class‑based views and reuse them across a project
 
 - **Module 3: Models** (`Module_3/`)
 
-  - Defining models and relationships, migrations, Django admin, querying with the ORM
+  - Work with the Django ORM: create models, run and apply migrations, and query data using the QuerySet API. Use the Django admin to manage users, groups, and permissions. Create forms and bind data with the Form API. Set up a MySQL database for your app.
+  - After completing this module, you will be able to:
+    - Create models and apply migrations using best practices
+    - Use the QuerySet API to interact with the database
+    - Create forms and bind data using the Form API
+    - Manage users, groups, and permissions in the Django admin
+    - Configure a MySQL database for your Django app
 
 - **Module 4: Templates** (`Module_4/`)
 
-  - DTL syntax, context, template inheritance, includes, static files, rendering forms
+  - Create templates and use the Django Template Language (DTL) to generate HTML. Work with template inheritance, includes, and static files. Integrate third‑party libraries. Intro to debugging and testing in Django.
+  - After completing this module, you will be able to:
+    - Create templates and use the template language to create markup
+    - Use templating to generate HTML and build reusable layouts
+    - Work effectively with templates and supporting assets
 
-- **Module 5: Course summary and graded project assessment** (`Module_5/`)
-  - Bring the pieces together in a small project; review and assessment
+- **Module 5: Graded Assessment** (`Module_5/`)
+  - Build a small Django site (e.g., Little Lemon prototype), then complete the final graded assessment and reflect on the course.
+  - After completing this module, you will be able to:
+    - Synthesize your Django skills to create a functional website
+    - Reflect on learning and plan next steps
 
 ## Getting Started
 
